@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour {
     //Set the layer that the player will check for inspections on
     [SerializeField]
     private LayerMask interactiveLayerMask = -1;
+    //Is the player currently interacting? If so, disable movement.
+    private bool interacting;
 
     //What direction is the player facing?
     private enum directions
@@ -26,6 +28,8 @@ public class PlayerMovement : MonoBehaviour {
 		rb = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator>();
 
+        interacting = false;
+
         lastDirection = directions.down;
 	}
 	
@@ -33,7 +37,7 @@ public class PlayerMovement : MonoBehaviour {
 	void Update () {
 		Vector2 movementVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
-		if(movementVector != Vector2.zero){
+		if(movementVector != Vector2.zero && !interacting){
 			anim.SetBool("isWalking", true);
 			anim.SetFloat("input_x", movementVector.x);
 			anim.SetFloat("input_y", movementVector.y);
@@ -52,6 +56,7 @@ public class PlayerMovement : MonoBehaviour {
                     lastDirection = directions.down;
             }
 
+            rb.MovePosition(rb.position + movementVector * moveSpeed * Time.deltaTime);
         } else {
 			anim.SetBool("isWalking", false);
 		}
@@ -76,16 +81,18 @@ public class PlayerMovement : MonoBehaviour {
                 break;
         }
 
-        RaycastHit2D raycast_hit = Physics2D.Raycast(rb.position, inspectRayDirection, 1, interactiveLayerMask);
+        //Use raycasts to determine if the player is in front of something interactable
+        RaycastHit2D raycastHit = Physics2D.Raycast(rb.position, inspectRayDirection, 1, interactiveLayerMask);
         Debug.DrawRay(rb.position, inspectRayDirection, Color.green);
-        if (raycast_hit.collider != null)
+        if (raycastHit.collider != null)
         {
             if(Input.GetButtonDown("Inspect"))
             {
-                Debug.Log("Hit");
+                GameObject other = raycastHit.collider.gameObject;
+                //Toggle interacting state
+                other.GetComponent<InspectTile>().toggleDialog();
+                interacting = !interacting;
             }
         }
-
-        rb.MovePosition(rb.position + movementVector * moveSpeed * Time.deltaTime);
 	}
 }
