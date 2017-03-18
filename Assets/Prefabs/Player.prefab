@@ -107,6 +107,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 4
+  interactiveLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!212 &212047529437657354
 SpriteRenderer:
   m_ObjectHideFlags: 1
