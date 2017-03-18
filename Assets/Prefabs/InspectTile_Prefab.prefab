@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212830226828259130}
   - component: {fileID: 61935793672729556}
   - component: {fileID: 114818204709015366}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: InspectTile_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
