@@ -20,6 +20,8 @@ public class PlayerMovement : MonoBehaviour {
     };
     private directions lastDirection;
 
+    public float warpCooldown;
+
     Rigidbody2D rb;
 	Animator anim;
 
@@ -28,6 +30,7 @@ public class PlayerMovement : MonoBehaviour {
 		rb = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator>();
 
+		warpCooldown = 0;
         interacting = false;
 
         lastDirection = directions.down;
@@ -35,6 +38,9 @@ public class PlayerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if(warpCooldown > 0) 
+			warpCooldown -= Time.deltaTime;
+
 		Vector2 movementVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
 		if(movementVector != Vector2.zero && !interacting){
