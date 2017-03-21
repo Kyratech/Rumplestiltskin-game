@@ -5,10 +5,10 @@ using UnityEngine;
 public class InspectTile : MonoBehaviour {
 
     [SerializeField]
-    private GameObject dialogBox;
+    protected GameObject dialogBox;
 
-    //Keeps track of time sincedialog appeared, so player can't dismiss it by accident
-    private float pauseTimer;
+    //Keeps track of time since dialog appeared, so player can't dismiss it by accident
+    protected float pauseTimer;
 
     void Start()
     {
@@ -24,7 +24,7 @@ public class InspectTile : MonoBehaviour {
         }
 	}
 
-    public bool toggleDialog()
+    public virtual bool toggleDialog()
     {
         if (pauseTimer <= 0)
         {
