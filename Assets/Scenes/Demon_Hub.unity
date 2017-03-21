@@ -577,6 +577,10 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1098399052526888, guid: c25959032f747a745b4e90ee68c7ff36, type: 2}
+      propertyPath: m_Name
+      value: Eldritch_Inspect
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114818204709015366, guid: c25959032f747a745b4e90ee68c7ff36, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: c25959032f747a745b4e90ee68c7ff36, type: 2}
@@ -598,6 +602,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogBox: {fileID: 1321531527}
+  eldritchIdle: {fileID: 21300000, guid: 7eb2376f308e4dc499803f841421b32e, type: 3}
+  eldritchTalk: {fileID: 21300000, guid: 01220d27bf439754ea52826d7be67abc, type: 3}
+  eldritchDemon: {fileID: 1044439948}
 --- !u!1001 &1579472680
 Prefab:
   m_ObjectHideFlags: 0
