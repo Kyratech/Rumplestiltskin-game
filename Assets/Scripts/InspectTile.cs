@@ -24,13 +24,15 @@ public class InspectTile : MonoBehaviour {
         }
 	}
 
-    public void toggleDialog()
+    public bool toggleDialog()
     {
-        if(pauseTimer <= 0)
+        if (pauseTimer <= 0)
         {
             //Toggle state, reset timer
             dialogBox.SetActive(!dialogBox.activeInHierarchy);
             pauseTimer = 0.5f;
         }
+        return dialogBox.activeInHierarchy;
     }
+
 }

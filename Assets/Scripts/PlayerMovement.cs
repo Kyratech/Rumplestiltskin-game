@@ -67,17 +67,17 @@ public class PlayerMovement : MonoBehaviour {
         switch (lastDirection)
         {
             case directions.right:
-                inspectRayDirection = new Vector2(1, 0);
+                inspectRayDirection = new Vector2(2, 0);
                 break;
             case directions.left:
-                inspectRayDirection = new Vector2(-1, 0);
+                inspectRayDirection = new Vector2(-2, 0);
                 break;
             case directions.up:
-                inspectRayDirection = new Vector2(0, 1);
+                inspectRayDirection = new Vector2(0, 2);
                 break;
             default:
             case directions.down:
-                inspectRayDirection = new Vector2(0, -1);
+                inspectRayDirection = new Vector2(0, -2);
                 break;
         }
 
@@ -90,8 +90,7 @@ public class PlayerMovement : MonoBehaviour {
             {
                 GameObject other = raycastHit.collider.gameObject;
                 //Toggle interacting state
-                other.GetComponent<InspectTile>().toggleDialog();
-                interacting = !interacting;
+                interacting = other.GetComponent<InspectTile>().toggleDialog();
             }
         }
 	}
