@@ -4,6 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EldritchDemonConversation : ConversationTile {
+    [SerializeField]
+    private Sprite eldritchIdle;
+    [SerializeField]
+    private Sprite eldritchTalk;
+    [SerializeField]
+    private GameObject eldritchDemon;
 
     public override void initText()
     {
@@ -19,6 +25,15 @@ public class EldritchDemonConversation : ConversationTile {
         lines.Add("Give up.");
         lines.Add("It will end poorly.");
         lines.Add("Return to your own realm before it is too late.");
+
+        this.setLines(lines);
+    }
+
+    public override void dialogFinishInit()
+    {
+        List<string> lines = new List<string>();
+        lines.Add("Repeat advice:");
+        lines.Add("Do not get involved in the affairs of demons.");
 
         this.setLines(lines);
     }

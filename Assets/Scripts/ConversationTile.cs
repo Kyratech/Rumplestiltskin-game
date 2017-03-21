@@ -44,11 +44,19 @@ public abstract class ConversationTile : InspectTile {
             {
                 dialogBox.SetActive(false);
                 lineCounter = 0;
+                dialogFinishInit();
             }
 
+            //Avoid accidental skips
+            pauseTimer = 0.5f;
         }
         return dialogBox.activeInHierarchy;
     }
+
+    /*
+     * Optionally do something after a dialog has finished
+     */
+    public abstract void dialogFinishInit();
 
     /*
      * Set the lines spoken by this 'character'
