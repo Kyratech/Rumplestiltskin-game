@@ -67,22 +67,22 @@ public class PlayerMovement : MonoBehaviour {
         switch (lastDirection)
         {
             case directions.right:
-                inspectRayDirection = new Vector2(2, 0);
+                inspectRayDirection = new Vector2(1, 0);
                 break;
             case directions.left:
-                inspectRayDirection = new Vector2(-2, 0);
+                inspectRayDirection = new Vector2(-1, 0);
                 break;
             case directions.up:
-                inspectRayDirection = new Vector2(0, 2);
+                inspectRayDirection = new Vector2(0, 1);
                 break;
             default:
             case directions.down:
-                inspectRayDirection = new Vector2(0, -2);
+                inspectRayDirection = new Vector2(0, -1);
                 break;
         }
 
         //Use raycasts to determine if the player is in front of something interactable
-        RaycastHit2D raycastHit = Physics2D.Raycast(rb.position, inspectRayDirection, 1, interactiveLayerMask);
+        RaycastHit2D raycastHit = Physics2D.Raycast(rb.position, inspectRayDirection, 1.5f, interactiveLayerMask);
         Debug.DrawRay(rb.position, inspectRayDirection, Color.green);
         if (raycastHit.collider != null)
         {
