@@ -419,7 +419,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 637572772}
-  - component: {fileID: 637572773}
   m_Layer: 0
   m_Name: Nebula
   m_TagString: Untagged
@@ -445,23 +444,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &637572773
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 637572771}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5008b42a1c8971041ace24692dd4c596, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &696654100
 GameObject:
   m_ObjectHideFlags: 0
@@ -966,6 +948,26 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 4}
+--- !u!1 &1439568395 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1693695909324884, guid: 5a33559c601fd934aac541d7e26aeff3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1570279457}
+--- !u!114 &1439568396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1439568395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a400c6f3cdf50c4196883fc60e6f570, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 744985229}
+  cameraSpeed: 0.1
+  scrollSpeed: 0.5
+  scrollLayer: {fileID: 637572771}
 --- !u!1 &1492836043
 GameObject:
   m_ObjectHideFlags: 0
@@ -1074,7 +1076,8 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 744985229}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114407635274170122, guid: 5a33559c601fd934aac541d7e26aeff3, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 5a33559c601fd934aac541d7e26aeff3, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1663583863
@@ -1223,7 +1226,7 @@ Prefab:
     - target: {fileID: 23054972788177168, guid: b43ff14090d8a9b45a7621e9a85d5b87,
         type: 2}
       propertyPath: m_SortingOrder
-      value: 51
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b43ff14090d8a9b45a7621e9a85d5b87, type: 2}
