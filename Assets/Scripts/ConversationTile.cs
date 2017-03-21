@@ -33,6 +33,7 @@ public abstract class ConversationTile : InspectTile {
             {
                 dialogBox.SetActive(true);
                 textObj.text = lines[lineCounter++];
+                dialogStartInit();
             }
             //Else activate the next text until the object no longer has any
             else if(lineCounter < lines.Count)
@@ -52,6 +53,12 @@ public abstract class ConversationTile : InspectTile {
         }
         return dialogBox.activeInHierarchy;
     }
+
+    /*
+     * Optionally do something at the start of a dialog
+     * Eg: change sprite
+     */
+    public abstract void dialogStartInit();
 
     /*
      * Optionally do something after a dialog has finished

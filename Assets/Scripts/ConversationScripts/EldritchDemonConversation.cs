@@ -29,8 +29,15 @@ public class EldritchDemonConversation : ConversationTile {
         this.setLines(lines);
     }
 
+    public override void dialogStartInit()
+    {
+        eldritchDemon.GetComponent<SpriteRenderer>().sprite = eldritchTalk;
+    }
+
     public override void dialogFinishInit()
     {
+        eldritchDemon.GetComponent<SpriteRenderer>().sprite = eldritchIdle;
+
         List<string> lines = new List<string>();
         lines.Add("Repeat advice:");
         lines.Add("Do not get involved in the affairs of demons.");
