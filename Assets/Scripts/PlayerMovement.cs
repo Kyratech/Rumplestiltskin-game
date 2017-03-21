@@ -95,8 +95,12 @@ public class PlayerMovement : MonoBehaviour {
             if(Input.GetButtonDown("Inspect"))
             {
                 GameObject other = raycastHit.collider.gameObject;
-                //Toggle interacting state
-                interacting = other.GetComponent<InspectTile>().toggleDialog();
+                if(other.tag.Equals("Door")) {
+                	other.GetComponent<DoorWarp>().ExitRoom();
+                } else {
+                	//Toggle interacting state
+                	interacting = other.GetComponent<InspectTile>().toggleDialog();
+                }
             }
         }
 	}
