@@ -10,23 +10,21 @@ public class EldritchDemonConversation : ConversationTile {
     private Sprite eldritchTalk;
     [SerializeField]
     private GameObject eldritchDemon;
+    [SerializeField]
+    private GameObject eldritchDialogOptionGameObject;
+
+    bool firstInteract;
 
     public override void initText()
     {
         List<string> lines = new List<string>();
+        lines.Add("This is unexpected.");
         lines.Add("Mortal.");
         lines.Add("What are you doing here.");
-        lines.Add("This is no place for your kind.");
-        lines.Add("I will not hurt you.");
-        lines.Add("However.");
-        lines.Add("Whatever you seek.");
-        lines.Add("Whatever your intentions.");
-        lines.Add("Advice:");
-        lines.Add("Give up.");
-        lines.Add("It will end poorly.");
-        lines.Add("Return to your own realm before it is too late.");
 
         this.setLines(lines);
+
+        firstInteract = true;
     }
 
     public override void dialogStartInit()
@@ -37,11 +35,27 @@ public class EldritchDemonConversation : ConversationTile {
     public override void dialogFinishInit()
     {
         eldritchDemon.GetComponent<SpriteRenderer>().sprite = eldritchIdle;
+        
+        //First time round, open the dialog choice box
+        if(firstInteract)
+        {
+            eldritchDialogOptionGameObject.SetActive(true);
+            firstInteract = false;
+            //Disable the interaction tile until the choice has been made
+            accessTriggerable = false;
+        }
+        else
+        {
+            List<string> lines = new List<string>();
+            lines.Add("Additional advice:");
+            lines.Add("Do not get involved in the affairs of demons.");
 
-        List<string> lines = new List<string>();
-        lines.Add("Repeat advice:");
-        lines.Add("Do not get involved in the affairs of demons.");
+            this.setLines(lines);
 
-        this.setLines(lines);
+            //Free the player from the converstaion
+            interacting = false;
+        }
+        
+        
     }
 }

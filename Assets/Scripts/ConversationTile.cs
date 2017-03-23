@@ -12,10 +12,30 @@ public abstract class ConversationTile : InspectTile {
 
     private Text textObj;
 
+    //Determines whether the player can move or not
+    protected bool interacting;
+    //Determines whether the dialog can be triggered
+    private bool triggerable;
+
+    public bool accessTriggerable
+    {
+        get
+        {
+            return triggerable;
+        }
+        set
+        {
+            triggerable = value;
+        }
+    }
+
+
     private void Start()
     {
         pauseTimer = 0.0f;
         lineCounter = 0;
+        interacting = false;
+        triggerable = true;
 
         textObj = dialogBox.transform.GetChild(0).gameObject.GetComponent<Text>();
 
@@ -26,11 +46,12 @@ public abstract class ConversationTile : InspectTile {
 
     public override bool toggleDialog()
     {
-        if (pauseTimer <= 0)
+        if (pauseTimer <= 0 && triggerable)
         {
             //If not activated, activate and set the first text
             if(!dialogBox.activeInHierarchy)
             {
+                interacting = true;
                 dialogBox.SetActive(true);
                 textObj.text = lines[lineCounter++];
                 dialogStartInit();
@@ -40,7 +61,7 @@ public abstract class ConversationTile : InspectTile {
             {
                 textObj.text = lines[lineCounter++];
             }
-            //OTherwise, the dialog should be closed
+            //OTherwise, the dialog should be end
             else
             {
                 dialogBox.SetActive(false);
@@ -51,7 +72,7 @@ public abstract class ConversationTile : InspectTile {
             //Avoid accidental skips
             pauseTimer = 0.5f;
         }
-        return dialogBox.activeInHierarchy;
+        return interacting;
     }
 
     /*
