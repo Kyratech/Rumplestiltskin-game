@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
-public abstract class DialogOptionController : MonoBehaviour
+public abstract class DialogOptionController : DialogItemController
 {
     //Dialog Options
     private List<GameObject> options;
