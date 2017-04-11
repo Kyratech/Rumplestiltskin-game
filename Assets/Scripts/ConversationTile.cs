@@ -3,41 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class ConversationTile : InspectTile {
-
-    //List of conversation lines that will appear
-    private List<string> lines;
-    //Count the number of lines read
-    private int lineCounter;
-
-    private Text textObj;
-
+/*
+ * Triggers a chain of dialog boxes upon interaction
+ * DialogBox variable becomes the first dialog in chain
+ */
+public abstract class ConversationTile : InspectTile
+{
     //Determines whether the player can move or not
-    protected bool interacting;
-    //Determines whether the dialog can be triggered
-    private bool triggerable;
-
-    public bool accessTriggerable
-    {
-        get
-        {
-            return triggerable;
-        }
-        set
-        {
-            triggerable = value;
-        }
-    }
+    private bool interacting;
 
 
     private void Start()
     {
         pauseTimer = 0.0f;
-        lineCounter = 0;
         interacting = false;
-        triggerable = true;
-
-        textObj = dialogBox.transform.GetChild(0).gameObject.GetComponent<Text>();
 
         initText();
     }
@@ -46,27 +25,20 @@ public abstract class ConversationTile : InspectTile {
 
     public override bool toggleDialog()
     {
-        if (pauseTimer <= 0 && triggerable)
+        if (pauseTimer <= 0)
         {
-            //If not activated, activate and set the first text
-            if(!dialogBox.activeInHierarchy)
+            //If not activated, activate and show the first dialog
+            if(!interacting)
             {
                 interacting = true;
+
                 dialogBox.SetActive(true);
-                textObj.text = lines[lineCounter++];
-                dialogStartInit();
+                dialogStart();
             }
-            //Else activate the next text until the object no longer has any
-            else if(lineCounter < lines.Count)
-            {
-                textObj.text = lines[lineCounter++];
-            }
-            //OTherwise, the dialog should be end
+            //OTherwise, the dialog should continue
             else
             {
-                dialogBox.SetActive(false);
-                lineCounter = 0;
-                dialogFinishInit();
+                dialogBox.GetComponent<DialogItemController>().showNext(this);
             }
 
             //Avoid accidental skips
@@ -79,20 +51,27 @@ public abstract class ConversationTile : InspectTile {
      * Optionally do something at the start of a dialog
      * Eg: change sprite
      */
-    public abstract void dialogStartInit();
+    public abstract void dialogStart();
 
     /*
      * Optionally do something after a dialog has finished
      */
-    public abstract void dialogFinishInit();
+    public abstract void dialogFinish();
 
     /*
      * Set the lines spoken by this 'character'
-     * Useful for changing dialog after eg first talk
      */
-    public void setLines(List<string> newLines)
+    public void setDialog(GameObject newDialog)
     {
-        lines = newLines;
-        lineCounter = 0;
+        dialogBox = newDialog;
+    }
+
+    /*
+     * End a conversation from outside this class
+     */
+     public void endInteraction()
+    {
+        interacting = false;
+        dialogFinish();
     }
 }

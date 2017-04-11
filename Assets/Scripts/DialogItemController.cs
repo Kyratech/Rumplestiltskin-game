@@ -9,9 +9,6 @@ using System.Collections;
  */
 public abstract class DialogItemController : MonoBehaviour
 {
-    //The gameobject that displays this dialog item
-    [SerializeField]
-    private GameObject myDialog;
     //The gameobject of the next item in the chain
     [SerializeField]
     protected GameObject nextDialog;
@@ -19,6 +16,7 @@ public abstract class DialogItemController : MonoBehaviour
     /*
      * Show the next line of dialog
      * or advance to the next dialog object
+     * Conversation argument is the inspectTile that triggered the convo
      */
-    public abstract void showNext();
+    public abstract void showNext(ConversationTile conversation);
 }

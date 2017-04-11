@@ -9,6 +9,7 @@ public abstract class DialogOptionController : DialogItemController
     private List<GameObject> options;
     private int activeOption;
 
+    //Used to get axis input start
     bool axisInUse;
 
     // Use this for initialization
@@ -60,17 +61,18 @@ public abstract class DialogOptionController : DialogItemController
         {
             axisInUse = false;
         }
+    }
 
-        //Select an option
-        if(Input.GetButtonDown("Inspect"))
-        {
-            selectOption(activeOption);
-            this.gameObject.SetActive(false);
-        }
+    /*
+     * Select an option
+     */
+    public override void showNext(ConversationTile conversation)
+    {
+        selectOption(activeOption, conversation);
     }
 
     /*
      * Do something with the selected option
      */
-    public abstract void selectOption(int option);
+    public abstract void selectOption(int option, ConversationTile conversation);
 }
