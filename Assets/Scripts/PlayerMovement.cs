@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour {
     public float warpCooldown;
 
     private GameObject inventoryScreen;
+    private GameObject gameController;
 
     Rigidbody2D rb;
 	Animator anim;
@@ -42,6 +43,8 @@ public class PlayerMovement : MonoBehaviour {
 
         inventoryScreen = GameObject.Find("Inventory_Prefab");
         inventoryScreen.SetActive(false);
+
+        gameController = GameObject.Find("GameManager");
 	}
 	
 	// Update is called once per frame
