@@ -9,7 +9,7 @@ public class BookcaseOptionDialog : DialogOptionController
     private GameObject leftDialog;
 
     /*
-    * Add the book to the player inventory if it were taken
+    * Add the book to the player inventory if it was taken
     */
     public override void selectOption(int option, ConversationTile conversation)
     {
@@ -18,6 +18,8 @@ public class BookcaseOptionDialog : DialogOptionController
             //"Take book"
             case 0:
                 nextDialog = takenDialog;
+                GameController gameController = GameObject.Find("GameManager").GetComponent<GameController>();
+                gameController.HasBook = true;
                 break;
             //"Leave book"
             case 1:
