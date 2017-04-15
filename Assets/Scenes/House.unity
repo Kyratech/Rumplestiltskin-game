@@ -2690,11 +2690,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'I was going to say something about this chest.
-
-    But I forgot.
-
-    (Help)'
+  m_Text: One should not ask the contents of a ladies chest.
 --- !u!222 &1301599802
 CanvasRenderer:
   m_ObjectHideFlags: 0
