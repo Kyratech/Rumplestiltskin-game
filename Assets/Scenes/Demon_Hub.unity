@@ -1985,6 +1985,7 @@ MonoBehaviour:
   eldritchIdle: {fileID: 21300000, guid: 7eb2376f308e4dc499803f841421b32e, type: 3}
   eldritchTalk: {fileID: 21300000, guid: 01220d27bf439754ea52826d7be67abc, type: 3}
   eldritchDemon: {fileID: 1044439948}
+  dialogOptionBox: {fileID: 1870181799}
 --- !u!1 &1576531700
 GameObject:
   m_ObjectHideFlags: 0
