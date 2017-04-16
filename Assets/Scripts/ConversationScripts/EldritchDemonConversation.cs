@@ -13,11 +13,9 @@ public class EldritchDemonConversation : ConversationTile {
     [SerializeField]
     private GameObject dialogOptionBox;
 
-    bool firstInteract;
-
     public override void initText()
     {
-        firstInteract = true;
+        //Nothing to do
     }
 
     public override void dialogStart()
