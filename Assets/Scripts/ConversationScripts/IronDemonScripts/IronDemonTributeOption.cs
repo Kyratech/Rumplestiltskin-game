@@ -1,16 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 
-public class EldritchDemonDialogOptionController : DialogOptionController
+public class IronDemonTributeOption : DialogOptionController
 {
     [SerializeField]
-    private GameObject nameDialog;
+    private GameObject ironDialog;
     [SerializeField]
-    private GameObject worldDialog;
-    [SerializeField]
-    private GameObject tributeDialog;
-
+    private GameObject otherDialog;
 
     /*
     * Set the demon's lines based on player response
@@ -19,18 +15,16 @@ public class EldritchDemonDialogOptionController : DialogOptionController
     {
         switch (option)
         {
-            //"Come to find demon name"
             case 0:
-                nextDialog = nameDialog;
+                nextDialog = ironDialog;
                 break;
-            //"Pay tribute"
             case 1:
-                nextDialog = tributeDialog;
+                nextDialog = otherDialog;
                 break;
-            //"Learn about the world"
             case 2:
-                nextDialog = worldDialog;
+                nextDialog = otherDialog;
                 break;
+
         }
 
         nextDialog.SetActive(true);

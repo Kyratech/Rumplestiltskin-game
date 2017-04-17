@@ -42,7 +42,7 @@ public abstract class DialogOptionController : DialogItemController
                 axisInUse = true;
 
                 //Increment or decrement the active option
-                if(value < 0)
+                if(value > 0)
                 {
                     activeOption = activeOption - 1;
                     //Wrap selected option

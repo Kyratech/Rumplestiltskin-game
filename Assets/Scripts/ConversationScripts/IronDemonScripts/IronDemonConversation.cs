@@ -9,10 +9,14 @@ public class IronDemonConversation : ConversationTile
     private Sprite ironTalk;
     [SerializeField]
     private GameObject ironDemon;
+    [SerializeField]
+    private GameObject secondInteractDialog;
+
+    bool firstInteract;
 
     public override void initText()
     {
-        
+        firstInteract = true;
     }
 
     public override void dialogStart()
@@ -22,6 +26,12 @@ public class IronDemonConversation : ConversationTile
 
     public override void dialogFinish()
     {
+        if (firstInteract)
+        {
+            firstInteract = false;
+            setDialog(secondInteractDialog);
+        }
+
         ironDemon.GetComponent<SpriteRenderer>().sprite = ironIdle;
     }
 }
