@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Door
   - DialogOption
+  - DemonPlatform
   layers:
   - Default
   - TransparentFX
