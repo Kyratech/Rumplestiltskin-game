@@ -9,7 +9,34 @@ public class CopperDemonTributeOptions : DialogOptionController
     private GameObject mercuryDialog;
     [SerializeField]
     private GameObject copperDialog;
+    [SerializeField]
+    private GameObject defaultDialog;
 
+    [SerializeField]
+    private GameObject ironOption;
+    [SerializeField]
+    private GameObject mercuryOption;
+    [SerializeField]
+    private GameObject copperOption;
+    [SerializeField]
+    private GameObject defaultOption;
+
+    public override void extraSetup()
+    {
+        //This is slow as heck! Only in use because this is a game jam sort of scenario.
+        GameController gameController = GameObject.Find("GameManager").GetComponent<GameController>();
+        if (gameController.hasIron || gameController.hasMercury || gameController.hasCopper)
+        {
+            ironOption.SetActive(gameController.hasIron);
+            mercuryOption.SetActive(gameController.hasMercury);
+            copperOption.SetActive(gameController.hasCopper);
+        }
+        else
+        {
+            defaultOption.SetActive(true);
+        }
+        UpdateOptions();
+    }
 
     /*
     * Set the demon's lines based on player response
@@ -31,7 +58,10 @@ public class CopperDemonTributeOptions : DialogOptionController
                 nextDialog = mercuryDialog;
                 angered = true;
                 break;
-            
+            case 3:
+                nextDialog = defaultOption;
+                angered = true;
+                break;
         }
 
         /* Downcasting conversation to specific type
@@ -45,6 +75,7 @@ public class CopperDemonTributeOptions : DialogOptionController
         }
 
         nextDialog.SetActive(true);
+        nextDialog.GetComponent<DialogItemController>().extraSetup();
         conversation.setDialog(nextDialog);
 
         this.gameObject.SetActive(false);

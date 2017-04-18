@@ -8,6 +8,11 @@ public class BookcaseOptionDialog : DialogOptionController
     [SerializeField]
     private GameObject leftDialog;
 
+    public override void extraSetup()
+    {
+        //Nothing
+    }
+
     /*
     * Add the book to the player inventory if it was taken
     */

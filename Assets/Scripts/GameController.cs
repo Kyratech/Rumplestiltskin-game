@@ -32,8 +32,8 @@ public class GameController : MonoBehaviour
 
         //TODO: Eventually should not start with these
         hasCopper = true;
-        hasIron = true;
-        hasMercury = true;
+        hasIron = false;
+        hasMercury = false;
 
         completedDemonBridge = false;
     }

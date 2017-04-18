@@ -8,6 +8,13 @@ public class IronDemonTributeOption : DialogOptionController
     [SerializeField]
     private GameObject otherDialog;
 
+    public override void extraSetup()
+    {
+        //This is slow as heck! Only in use because this is a game jam sort of scenario.
+        GameController gameController = GameObject.Find("GameManager").GetComponent<GameController>();
+        
+    }
+
     /*
     * Set the demon's lines based on player response
     */

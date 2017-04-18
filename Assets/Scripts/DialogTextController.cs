@@ -45,6 +45,7 @@ public abstract class DialogTextController : DialogItemController
             if (nextDialog != null)
             {
                 nextDialog.SetActive(true);
+                nextDialog.GetComponent<DialogItemController>().extraSetup();
                 conversation.setDialog(nextDialog);
 
                 this.gameObject.SetActive(false);
@@ -55,5 +56,10 @@ public abstract class DialogTextController : DialogItemController
                 this.gameObject.SetActive(false);
             }
         }
+    }
+
+    public override void extraSetup()
+    {
+        //Do nothing
     }
 }

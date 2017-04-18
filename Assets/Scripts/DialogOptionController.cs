@@ -17,16 +17,7 @@ public abstract class DialogOptionController : DialogItemController
     {
         axisInUse = false;
 
-        options = new List<GameObject>();
-        //Get all the dialog options
-        foreach(Transform child in transform)
-        {
-            options.Add(child.gameObject);
-        }
-
-        activeOption = 0;
-
-        options[activeOption].GetComponent<Toggle>().isOn = true;
+        UpdateOptions();
     }
 
     // Update is called once per frame
@@ -63,12 +54,28 @@ public abstract class DialogOptionController : DialogItemController
         }
     }
 
+    public void UpdateOptions()
+    {
+        options = new List<GameObject>();
+        //Get all the dialog options
+        foreach (Transform child in transform)
+        {
+            if(child.gameObject.activeInHierarchy)
+                options.Add(child.gameObject);
+        }
+
+        activeOption = 0;
+
+        options[activeOption].GetComponent<Toggle>().isOn = true;
+    }
+
     /*
      * Select an option
      */
     public override void showNext(ConversationTile conversation)
     {
-        selectOption(activeOption, conversation);
+        int optionID = options[activeOption].GetComponent<DialogOption>().optionID;
+        selectOption(optionID, conversation);
     }
 
     /*
