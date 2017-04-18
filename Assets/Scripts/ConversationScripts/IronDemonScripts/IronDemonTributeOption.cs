@@ -7,12 +7,37 @@ public class IronDemonTributeOption : DialogOptionController
     private GameObject ironDialog;
     [SerializeField]
     private GameObject otherDialog;
+    [SerializeField]
+    private GameObject nothingDialog;
+
+    [SerializeField]
+    private GameObject ironOption;
+    [SerializeField]
+    private GameObject copperOption;
+    [SerializeField]
+    private GameObject mercuryOption;
+    [SerializeField]
+    private GameObject nothingOption;
 
     public override void extraSetup()
     {
         //This is slow as heck! Only in use because this is a game jam sort of scenario.
         GameController gameController = GameObject.Find("GameManager").GetComponent<GameController>();
-        
+        if (gameController.hasIron || gameController.hasMercury || gameController.hasCopper)
+        {
+            ironOption.SetActive(gameController.hasIron);
+            mercuryOption.SetActive(gameController.hasMercury);
+            copperOption.SetActive(gameController.hasCopper);
+            nothingOption.SetActive(false);
+        }
+        else
+        {
+            ironOption.SetActive(false);
+            mercuryOption.SetActive(false);
+            copperOption.SetActive(false);
+            nothingOption.SetActive(true);
+        }
+        UpdateOptions();
     }
 
     /*
@@ -23,6 +48,9 @@ public class IronDemonTributeOption : DialogOptionController
         switch (option)
         {
             case 0:
+                //This is slow as heck! Only in use because this is a game jam sort of scenario.
+                GameController gameController = GameObject.Find("GameManager").GetComponent<GameController>();
+                gameController.hasIron = false;
                 nextDialog = ironDialog;
                 break;
             case 1:
@@ -31,10 +59,13 @@ public class IronDemonTributeOption : DialogOptionController
             case 2:
                 nextDialog = otherDialog;
                 break;
-
+            case 3:
+                nextDialog = nothingDialog;
+                break;
         }
 
         nextDialog.SetActive(true);
+        nextDialog.GetComponent<DialogItemController>().extraSetup();
         conversation.setDialog(nextDialog);
 
         this.gameObject.SetActive(false);
