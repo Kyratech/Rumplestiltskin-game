@@ -30,9 +30,13 @@ public class CopperDemonTributeOptions : DialogOptionController
             ironOption.SetActive(gameController.hasIron);
             mercuryOption.SetActive(gameController.hasMercury);
             copperOption.SetActive(gameController.hasCopper);
+            defaultOption.SetActive(false);
         }
         else
         {
+            ironOption.SetActive(false);
+            mercuryOption.SetActive(false);
+            copperOption.SetActive(false);
             defaultOption.SetActive(true);
         }
         UpdateOptions();
@@ -59,7 +63,7 @@ public class CopperDemonTributeOptions : DialogOptionController
                 angered = true;
                 break;
             case 3:
-                nextDialog = defaultOption;
+                nextDialog = defaultDialog;
                 angered = true;
                 break;
         }
