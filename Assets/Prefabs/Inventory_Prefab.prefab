@@ -257,6 +257,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bookIcon: {fileID: 1313211755934498}
+  copperIcon: {fileID: 1935618929934704}
+  ironIcon: {fileID: 1397571594002648}
+  mercuryIcon: {fileID: 1354523909826826}
 --- !u!114 &114755111800102136
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -19,7 +19,7 @@ public class BookcaseOptionDialog : DialogOptionController
             case 0:
                 nextDialog = takenDialog;
                 GameController gameController = GameObject.Find("GameManager").GetComponent<GameController>();
-                gameController.HasBook = true;
+                gameController.hasBook = true;
                 break;
             //"Leave book"
             case 1:

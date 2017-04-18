@@ -2277,6 +2277,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bookIcon: {fileID: 289698805}
+  copperIcon: {fileID: 1178211530}
+  ironIcon: {fileID: 56312108}
+  mercuryIcon: {fileID: 117144997}
 --- !u!1001 &1612271775
 Prefab:
   m_ObjectHideFlags: 0

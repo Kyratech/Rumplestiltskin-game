@@ -31,6 +31,15 @@ public class DemonHub_Controller : MonoBehaviour
         }
 
         platformMoveTimer = 0;
+
+        //This is slow as heck! Only in use because this is a game jam sort of scenario.
+        GameController gameController = GameObject.Find("GameManager").GetComponent<GameController>();
+        if(gameController.CompletedDemonBridge)
+        {
+            beaconsCorrect = true;
+
+            northBlocker.SetActive(false);
+        }
     }
 
     void Update()
@@ -68,6 +77,10 @@ public class DemonHub_Controller : MonoBehaviour
             beaconsCorrect = true;
 
             northBlocker.SetActive(false);
+
+            //This is slow as heck! Only in use because this is a game jam sort of scenario.
+            GameController gameController = GameObject.Find("GameManager").GetComponent<GameController>();
+            gameController.CompletedDemonBridge = true;
         }
     }
 }

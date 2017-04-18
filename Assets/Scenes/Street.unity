@@ -188,9 +188,39 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114755909140243352, guid: 5fe58693ba19dc547bb7a0fb4892ff90,
+        type: 2}
+      propertyPath: copperIcon
+      value: 
+      objectReference: {fileID: 246546788}
+    - target: {fileID: 114755909140243352, guid: 5fe58693ba19dc547bb7a0fb4892ff90,
+        type: 2}
+      propertyPath: ironIcon
+      value: 
+      objectReference: {fileID: 246546787}
+    - target: {fileID: 114755909140243352, guid: 5fe58693ba19dc547bb7a0fb4892ff90,
+        type: 2}
+      propertyPath: mercuryIcon
+      value: 
+      objectReference: {fileID: 246546786}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5fe58693ba19dc547bb7a0fb4892ff90, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &246546786 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1310736967788006, guid: 5fe58693ba19dc547bb7a0fb4892ff90,
+    type: 2}
+  m_PrefabInternal: {fileID: 246546785}
+--- !u!1 &246546787 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1509356405936866, guid: 5fe58693ba19dc547bb7a0fb4892ff90,
+    type: 2}
+  m_PrefabInternal: {fileID: 246546785}
+--- !u!1 &246546788 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1333331622935426, guid: 5fe58693ba19dc547bb7a0fb4892ff90,
+    type: 2}
+  m_PrefabInternal: {fileID: 246546785}
 --- !u!1001 &376969076
 Prefab:
   m_ObjectHideFlags: 0

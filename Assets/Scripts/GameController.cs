@@ -10,10 +10,16 @@ using System.Collections;
 public class GameController : MonoBehaviour
 {
     //Inventory
-    private bool hasBook;
+    public bool hasBook;
+    public bool hasCopper;
+    public bool hasIron;
+    public bool hasMercury;
 
-    public bool HasBook { get; set; }
-        
+    //Game progress
+    private bool completedDemonBridge;
+
+    public bool CompletedDemonBridge { get; set; }
+
     void Awake()
     {
         DontDestroyOnLoad(transform.gameObject);
@@ -23,5 +29,12 @@ public class GameController : MonoBehaviour
     void Start()
     {
         hasBook = false;
+
+        //TODO: Eventually should not start with these
+        hasCopper = true;
+        hasIron = true;
+        hasMercury = true;
+
+        completedDemonBridge = false;
     }
 }
