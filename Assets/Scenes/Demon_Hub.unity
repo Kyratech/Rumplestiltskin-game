@@ -1764,6 +1764,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   northBlocker: {fileID: 1534004551}
+  cameraObj: {fileID: 1705129600}
+  player: {fileID: 1579516882}
 --- !u!1 &370972473
 GameObject:
   m_ObjectHideFlags: 0
@@ -6956,6 +6958,11 @@ Prefab:
     - {fileID: 114407635274170122, guid: 5a33559c601fd934aac541d7e26aeff3, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 5a33559c601fd934aac541d7e26aeff3, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1579516882 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1079621079489146, guid: 912009052ff9d144c8ec3c85d6c6751d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1372685694}
 --- !u!1001 &1637414530
 Prefab:
   m_ObjectHideFlags: 0

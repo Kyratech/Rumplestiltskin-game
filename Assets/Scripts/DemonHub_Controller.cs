@@ -14,6 +14,11 @@ public class DemonHub_Controller : MonoBehaviour
     private float platformMoveTimer;
     private float platformMoveDuration = 2.0f;
 
+    [SerializeField]
+    private GameObject cameraObj;
+    [SerializeField]
+    private GameObject player;
+
     void Start()
     {
         beacons = GameObject.FindGameObjectsWithTag("DemonBeacon");
@@ -56,6 +61,16 @@ public class DemonHub_Controller : MonoBehaviour
 
             platformMoveTimer += Time.deltaTime;
         }
+        else if(beaconsCorrect && platformMoveTimer < platformMoveDuration + 1.0f)
+        {
+            platformMoveTimer += Time.deltaTime;
+
+            if(platformMoveTimer >= platformMoveDuration + 1.0f)
+            {
+                cameraObj.GetComponent<CameraFollow>().setTarget(player.transform);
+                player.GetComponent<PlayerMovement>().setInteracting(false);
+            }
+        }
     }
 
     public void updateBeacons()
@@ -77,6 +92,10 @@ public class DemonHub_Controller : MonoBehaviour
             beaconsCorrect = true;
 
             northBlocker.SetActive(false);
+
+            //Look at the centre platform
+            cameraObj.GetComponent<CameraFollow>().setTarget(platforms[1].transform);
+            player.GetComponent<PlayerMovement>().setInteracting(true);
 
             //This is slow as heck! Only in use because this is a game jam sort of scenario.
             GameController gameController = GameObject.Find("GameManager").GetComponent<GameController>();

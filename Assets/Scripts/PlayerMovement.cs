@@ -135,4 +135,9 @@ public class PlayerMovement : MonoBehaviour {
             }
         }
 	}
+
+    public void setInteracting(bool newInteracting)
+    {
+        interacting = newInteracting;
+    }
 }
