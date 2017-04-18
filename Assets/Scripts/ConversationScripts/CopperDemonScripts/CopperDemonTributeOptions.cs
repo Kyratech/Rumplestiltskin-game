@@ -56,6 +56,9 @@ public class CopperDemonTributeOptions : DialogOptionController
                 angered = true;
                 break;
             case 1:
+                //This is slow as heck! Only in use because this is a game jam sort of scenario.
+                GameController gameController = GameObject.Find("GameManager").GetComponent<GameController>();
+                gameController.hasCopper = false;
                 nextDialog = copperDialog;
                 break;
             case 2:
