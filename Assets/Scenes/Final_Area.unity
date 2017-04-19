@@ -1600,9 +1600,9 @@ Prefab:
     - target: {fileID: 114934651622973216, guid: 9e9255a0d0b2c1c4d858842ff49646e7,
         type: 2}
       propertyPath: m_Text
-      value: 'That symbol...
+      value: 'Ah, so my demon also has one of these symbols.
 
-        It looks like some of the ones in the book!'
+        How can I use it to get a name?'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9e9255a0d0b2c1c4d858842ff49646e7, type: 2}

@@ -242,6 +242,7 @@ GameObject:
   m_Component:
   - component: {fileID: 15473707}
   - component: {fileID: 15473706}
+  - component: {fileID: 15473708}
   m_Layer: 0
   m_Name: Copper_demon
   m_TagString: Untagged
@@ -297,6 +298,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &15473708
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 15473705}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 4}
 --- !u!1 &17661249
 GameObject:
   m_ObjectHideFlags: 0
@@ -6432,9 +6447,9 @@ Prefab:
     - target: {fileID: 114934651622973216, guid: 9e9255a0d0b2c1c4d858842ff49646e7,
         type: 2}
       propertyPath: m_Text
-      value: 'Amazing!
+      value: 'A tree like no other on Earth!
 
-        I have never seen trees like this before!'
+        If only I knew more about botany, I could try and identify it.'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9e9255a0d0b2c1c4d858842ff49646e7, type: 2}

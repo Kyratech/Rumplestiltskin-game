@@ -16,9 +16,7 @@ public class GameController : MonoBehaviour
     public bool hasMercury;
 
     //Game progress
-    private bool completedDemonBridge;
-
-    public bool CompletedDemonBridge { get; set; }
+    public bool completedDemonBridge;
 
     void Awake()
     {
