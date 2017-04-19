@@ -14,4 +14,6 @@ public class IronDemonFollowupDialog : DialogTextController
 
         this.setLines(lines);
     }
+
+    public override void extraSetup() { }
 }

@@ -15,4 +15,6 @@ public class IronDemonIntroDialog : DialogTextController
 
         this.setLines(lines);
     }
+
+    public override void extraSetup() { }
 }

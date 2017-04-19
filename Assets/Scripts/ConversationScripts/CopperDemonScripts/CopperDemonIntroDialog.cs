@@ -17,4 +17,6 @@ public class CopperDemonIntroDialog : DialogTextController
 
         this.setLines(lines);
     }
+
+    public override void extraSetup() { }
 }

@@ -18,4 +18,6 @@ public class EldritchDemonWorldResponse : DialogTextController
 
         this.setLines(lines);
     }
+
+    public override void extraSetup() { }
 }

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class CopperDemonBadAfterDialog : DialogTextController
 {
@@ -12,4 +13,6 @@ public class CopperDemonBadAfterDialog : DialogTextController
 
         this.setLines(lines);
     }
+
+    public override void extraSetup() { }
 }

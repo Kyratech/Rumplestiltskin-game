@@ -16,4 +16,6 @@ public class CopperDemonBadDialog : DialogTextController
 
         this.setLines(lines);
     }
+
+    public override void extraSetup() { }
 }

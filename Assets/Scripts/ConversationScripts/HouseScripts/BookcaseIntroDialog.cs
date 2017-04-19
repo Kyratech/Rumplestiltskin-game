@@ -14,4 +14,6 @@ public class BookcaseIntroDialog : DialogTextController
 
         this.setLines(lines);
     }
+
+    public override void extraSetup() { }
 }

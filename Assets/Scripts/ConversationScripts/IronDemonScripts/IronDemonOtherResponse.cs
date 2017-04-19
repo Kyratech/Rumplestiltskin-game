@@ -14,4 +14,6 @@ public class IronDemonOtherResponse : DialogTextController
 
         this.setLines(lines);
     }
+
+    public override void extraSetup() { }
 }

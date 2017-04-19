@@ -57,9 +57,4 @@ public abstract class DialogTextController : DialogItemController
             }
         }
     }
-
-    public override void extraSetup()
-    {
-        //Do nothing
-    }
 }
