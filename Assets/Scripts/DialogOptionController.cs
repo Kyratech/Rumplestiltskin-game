@@ -74,7 +74,7 @@ public abstract class DialogOptionController : DialogItemController
      */
     public override void showNext(ConversationTile conversation)
     {
-        int optionID = options[activeOption].GetComponent<DialogOption>().optionID;
+        int optionID = options[activeOption].GetComponent<ItemID>().optionID;
         selectOption(optionID, conversation);
     }
 

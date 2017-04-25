@@ -18,9 +18,13 @@ public class GameController : MonoBehaviour
     //Game progress
     public bool completedDemonBridge;
 
+    //Level warp data - find where to put player in next level
+    public int warpID;
+
     void Awake()
     {
         DontDestroyOnLoad(transform.gameObject);
+        warpID = 0;
     }
 
     // Use this for initialization
@@ -31,7 +35,7 @@ public class GameController : MonoBehaviour
         //TODO: Eventually should not start with these
         hasCopper = true;
         hasIron = true;
-        hasMercury = true;
+        hasMercury = true;        
 
         completedDemonBridge = false;
     }

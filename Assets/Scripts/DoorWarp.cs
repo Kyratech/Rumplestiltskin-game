@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DoorWarp : MonoBehaviour {
-
-public string sceneToLoad;
+public class DoorWarp : SceneWarp {
 
 	public void ExitRoom() {
+        controller.warpID = warpID;
 		SceneManager.LoadScene(sceneToLoad);
 	}
 

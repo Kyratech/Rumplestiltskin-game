@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DialogOption : MonoBehaviour
+public class ItemID : MonoBehaviour
 {
     public int optionID;
 }
