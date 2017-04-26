@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: hole
+  m_Name: castlefloors
   m_Shader: {fileID: 4800000, guid: 99fd33029232b8444a60a01e27b081ee, type: 3}
   m_ShaderKeywords: PIXELSNAP_ON
   m_LightmapFlags: 5
@@ -18,7 +18,7 @@ Material:
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 2800000, guid: 80045b41ed1e086438f260489acbc59e, type: 3}
+        m_Texture: {fileID: 2800000, guid: 121e37b7b1450134f94d1a3c8e0700d5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
