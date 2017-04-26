@@ -2561,9 +2561,27 @@ Prefab:
       propertyPath: dialogBox
       value: 
       objectReference: {fileID: 1886456439}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114818204709015366, guid: c25959032f747a745b4e90ee68c7ff36, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: c25959032f747a745b4e90ee68c7ff36, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1856358140 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1098399052526888, guid: c25959032f747a745b4e90ee68c7ff36,
+    type: 2}
+  m_PrefabInternal: {fileID: 1856358139}
+--- !u!114 &1856358141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1856358140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 838e026176521ef4e91e918e7162ab57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogBox: {fileID: 1886456439}
 --- !u!1001 &1886456437
 Prefab:
   m_ObjectHideFlags: 0
@@ -2671,6 +2689,10 @@ Prefab:
       value: 'Ah, so my demon also has one of these symbols.
 
         How can I use it to get a name?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1625027571299156, guid: 9e9255a0d0b2c1c4d858842ff49646e7, type: 2}
+      propertyPath: m_Name
+      value: Tablet_Dialog
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9e9255a0d0b2c1c4d858842ff49646e7, type: 2}
