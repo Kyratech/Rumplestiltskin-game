@@ -46,10 +46,12 @@ public class GameController : MonoBehaviour
         hasBook = false;
 
         //TODO: Eventually should not start with these
-        hasCopper = true;
-        hasIron = true;
-        hasMercury = true;
+        hasCopper = false;
+        hasIron = false;
+        hasMercury = false;
 
+        hasKey = false;
+       	
         metCopperDemon = false;
         metIronDemon = false;
         readDemonTablet = false;       
