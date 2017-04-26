@@ -19,4 +19,9 @@ public abstract class DialogItemController : MonoBehaviour
      * Conversation argument is the inspectTile that triggered the convo
      */
     public abstract void showNext(ConversationTile conversation);
+
+    /*
+     * Used for stuff like deactivating options
+     */
+    public abstract void extraSetup();
 }

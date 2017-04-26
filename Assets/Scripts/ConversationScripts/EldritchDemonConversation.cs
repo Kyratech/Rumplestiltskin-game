@@ -10,12 +10,12 @@ public class EldritchDemonConversation : ConversationTile {
     private Sprite eldritchTalk;
     [SerializeField]
     private GameObject eldritchDemon;
-
-    bool firstInteract;
+    [SerializeField]
+    private GameObject dialogOptionBox;
 
     public override void initText()
     {
-        firstInteract = true;
+        //Nothing to do
     }
 
     public override void dialogStart()
@@ -26,5 +26,6 @@ public class EldritchDemonConversation : ConversationTile {
     public override void dialogFinish()
     {
         eldritchDemon.GetComponent<SpriteRenderer>().sprite = eldritchIdle;
+        dialogBox = dialogOptionBox;
     }
 }

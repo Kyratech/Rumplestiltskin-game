@@ -1,17 +1,19 @@
-﻿using System;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
+using System.Collections;
 
 public class SceneWarp : MonoBehaviour
 {
     [SerializeField]
-    private string sceneToLoad;
+    protected string sceneToLoad;
 
-    void OnTriggerEnter2D(Collider2D other)
+    //Which warp to spawn at in the next level
+    [SerializeField]
+    protected int warpID;
+    protected GameController controller;
+
+    void Start()
     {
-        if (other.CompareTag("Player") && other.GetComponent<PlayerMovement>().warpCooldown <= 0)
-        {
-            SceneManager.LoadScene(sceneToLoad);
-        }
+        GameObject gameController = GameObject.Find("GameManager");
+        controller = gameController.GetComponent<GameController>();
     }
 }

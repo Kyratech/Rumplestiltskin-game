@@ -8,9 +8,9 @@ public class EldritchDemonWorldResponse : DialogTextController
     void Start()
     {
         List<string> lines = new List<string>();
-        lines.Add("...");
         lines.Add("The realm of the Demons.");
         lines.Add("Is no place for mortal kind.");
+        lines.Add("And yet you come.");
         lines.Add("Advice:");
         lines.Add("Leave.");
         lines.Add("This will end poorly.");
@@ -18,4 +18,6 @@ public class EldritchDemonWorldResponse : DialogTextController
 
         this.setLines(lines);
     }
+
+    public override void extraSetup() { }
 }

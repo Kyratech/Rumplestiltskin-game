@@ -44,7 +44,21 @@ public class PlayerMovement : MonoBehaviour {
         inventoryScreen = GameObject.Find("Inventory_Prefab");
         inventoryScreen.SetActive(false);
 
+        
         gameController = GameObject.Find("GameManager");
+        GameController controller = gameController.GetComponent<GameController>();
+
+        //Move to the correct spawn
+        GameObject[] spawns = GameObject.FindGameObjectsWithTag("Respawn");
+        for(int i = 0; i < spawns.Length; i++)
+        {
+            if(spawns[i].GetComponent<ItemID>().optionID == controller.warpID)
+            {
+                transform.position = spawns[i].transform.position;
+                Camera.main.transform.position = spawns[i].transform.position;
+                break;
+            }
+        }
 	}
 	
 	// Update is called once per frame
@@ -135,4 +149,9 @@ public class PlayerMovement : MonoBehaviour {
             }
         }
 	}
+
+    public void setInteracting(bool newInteracting)
+    {
+        interacting = newInteracting;
+    }
 }

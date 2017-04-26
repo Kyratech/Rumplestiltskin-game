@@ -5,6 +5,12 @@ public class InventoryController : MonoBehaviour
 {
     [SerializeField]
     GameObject bookIcon;
+    [SerializeField]
+    GameObject copperIcon;
+    [SerializeField]
+    GameObject ironIcon;
+    [SerializeField]
+    GameObject mercuryIcon;
 
     public bool ToggleVisible()
     {
@@ -13,9 +19,8 @@ public class InventoryController : MonoBehaviour
         {
             thisObject.SetActive(true);
 
-            //This is slow as heck! Only in use because this is a game jam sort of scenario.
-            GameController gameController = GameObject.Find("GameManager").GetComponent<GameController>();
-            bookIcon.SetActive(gameController.HasBook);
+            updateInventory();
+            
         }
         else
         {
@@ -23,5 +28,16 @@ public class InventoryController : MonoBehaviour
         }
 
         return thisObject.activeInHierarchy;
+    }
+
+    private void updateInventory()
+    {
+        //This is slow as heck! Only in use because this is a game jam sort of scenario.
+        GameController gameController = GameObject.Find("GameManager").GetComponent<GameController>();
+
+        bookIcon.SetActive(gameController.hasBook);
+        copperIcon.SetActive(gameController.hasCopper);
+        ironIcon.SetActive(gameController.hasIron);
+        mercuryIcon.SetActive(gameController.hasMercury);
     }
 }

@@ -11,6 +11,10 @@ public class EldritchDemonDialogOptionController : DialogOptionController
     [SerializeField]
     private GameObject tributeDialog;
 
+    public override void extraSetup()
+    {
+        //Nothing
+    }
 
     /*
     * Set the demon's lines based on player response
@@ -23,13 +27,13 @@ public class EldritchDemonDialogOptionController : DialogOptionController
             case 0:
                 nextDialog = nameDialog;
                 break;
-            //"Learn about the world"
-            case 1:
-                nextDialog = worldDialog;
-                break;
             //"Pay tribute"
-            case 2:
+            case 1:
                 nextDialog = tributeDialog;
+                break;
+            //"Learn about the world"
+            case 2:
+                nextDialog = worldDialog;
                 break;
         }
 

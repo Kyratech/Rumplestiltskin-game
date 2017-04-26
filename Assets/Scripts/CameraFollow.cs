@@ -24,4 +24,12 @@ public class CameraFollow : MonoBehaviour {
 		}
 
 	}
+
+    /*
+     * Good if you want to point at something else for a bit
+     */
+    public void setTarget(Transform newTarget)
+    {
+        target = newTarget;
+    }
 }

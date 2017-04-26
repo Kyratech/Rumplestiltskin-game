@@ -20,8 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4753410684176742}
   - component: {fileID: 212329098639872532}
-  - component: {fileID: 114988717901293500}
   - component: {fileID: 61363514224852756}
+  - component: {fileID: 114853061473901192}
   m_Layer: 0
   m_Name: SceneWarp_Prefab
   m_TagString: Untagged
@@ -56,7 +56,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
---- !u!114 &114988717901293500
+--- !u!114 &114853061473901192
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -64,10 +64,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1095845908761792}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6456d2d8023b59741806bfc0ab09b907, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ac4921a9ee117f4ab2739383c1b6632, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Final Area
+  sceneToLoad: 
+  warpID: 0
 --- !u!212 &212329098639872532
 SpriteRenderer:
   m_ObjectHideFlags: 1

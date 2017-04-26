@@ -13,4 +13,6 @@ public class BookLeaveDialog : DialogTextController
 
         this.setLines(lines);
     }
+
+    public override void extraSetup() { }
 }

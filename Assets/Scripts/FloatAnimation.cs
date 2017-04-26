@@ -23,7 +23,7 @@ public class FloatAnimation : MonoBehaviour
     {
         myTransform = gameObject.transform;
         initialPosition = myTransform.position;
-        timer = 0;
+        timer = Random.Range(0.0f, Mathf.PI * 2);
 	}
 	
 	// Bob up and down based on a sin pattern
@@ -39,4 +39,9 @@ public class FloatAnimation : MonoBehaviour
         float deltaY = distance * Mathf.Sin(timer);
         myTransform.position = initialPosition + new Vector3(0, deltaY, 0);
 	}
+
+    public void setInitialPosition(Vector3 newPos)
+    {
+        initialPosition = newPos;
+    }
 }

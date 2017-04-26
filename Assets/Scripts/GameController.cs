@@ -10,18 +10,33 @@ using System.Collections;
 public class GameController : MonoBehaviour
 {
     //Inventory
-    private bool hasBook;
+    public bool hasBook;
+    public bool hasCopper;
+    public bool hasIron;
+    public bool hasMercury;
 
-    public bool HasBook { get; set; }
-        
+    //Game progress
+    public bool completedDemonBridge;
+
+    //Level warp data - find where to put player in next level
+    public int warpID;
+
     void Awake()
     {
         DontDestroyOnLoad(transform.gameObject);
+        warpID = 0;
     }
 
     // Use this for initialization
     void Start()
     {
         hasBook = false;
+
+        //TODO: Eventually should not start with these
+        hasCopper = true;
+        hasIron = true;
+        hasMercury = true;        
+
+        completedDemonBridge = false;
     }
 }

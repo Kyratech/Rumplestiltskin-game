@@ -9,15 +9,16 @@ public class EldritchDemonTributeResponse : DialogTextController
     void Start()
     {
         List<string> lines = new List<string>();
-        lines.Add("You should not worship our kind.");
-        lines.Add("Though each Demon presides over a particular unique element.");
-        lines.Add("We are not the source of your wealths.");
-        lines.Add("Rather.");
-        lines.Add("It is merely an exercise in vanity.");
+        lines.Add("An offering?");
+        lines.Add("That is certainly one way to earn favours.");
+        lines.Add("However.");
+        lines.Add("Do not expect true loyalty.");
         lines.Add("Advice:");
-        lines.Add("You have nothing to thank Demons for.");
-        lines.Add("Abandon this foolish endeavor.");
+        lines.Add("Each demon presides over one element.");
+        lines.Add("And we do not like to share them.");
 
         this.setLines(lines);
     }
+
+    public override void extraSetup() { }
 }

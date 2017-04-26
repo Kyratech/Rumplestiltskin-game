@@ -8,6 +8,11 @@ public class BookcaseOptionDialog : DialogOptionController
     [SerializeField]
     private GameObject leftDialog;
 
+    public override void extraSetup()
+    {
+        //Nothing
+    }
+
     /*
     * Add the book to the player inventory if it was taken
     */
@@ -19,7 +24,7 @@ public class BookcaseOptionDialog : DialogOptionController
             case 0:
                 nextDialog = takenDialog;
                 GameController gameController = GameObject.Find("GameManager").GetComponent<GameController>();
-                gameController.HasBook = true;
+                gameController.hasBook = true;
                 break;
             //"Leave book"
             case 1:
