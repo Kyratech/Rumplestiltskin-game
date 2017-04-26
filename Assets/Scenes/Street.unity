@@ -546,6 +546,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bookIcon: {fileID: 1260776403}
+  copperIcon: {fileID: 0}
+  ironIcon: {fileID: 0}
+  mercuryIcon: {fileID: 0}
 --- !u!1001 &376969076
 Prefab:
   m_ObjectHideFlags: 0
@@ -2914,6 +2917,11 @@ Prefab:
     - target: {fileID: 4753410684176742, guid: fc93df2d14d566c4b86696f933d73188, type: 2}
       propertyPath: m_LocalScale.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114853061473901192, guid: fc93df2d14d566c4b86696f933d73188,
+        type: 2}
+      propertyPath: sceneToLoad
+      value: Forest_Maze
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc93df2d14d566c4b86696f933d73188, type: 2}
