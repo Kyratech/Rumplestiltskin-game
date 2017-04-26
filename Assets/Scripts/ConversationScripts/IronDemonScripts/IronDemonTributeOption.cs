@@ -45,19 +45,23 @@ public class IronDemonTributeOption : DialogOptionController
     */
     public override void selectOption(int option, ConversationTile conversation)
     {
+        GameController gameController = GameObject.Find("GameManager").GetComponent<GameController>();
+        gameController.metIronDemon = true;
+
         switch (option)
         {
             case 0:
-                //This is slow as heck! Only in use because this is a game jam sort of scenario.
-                GameController gameController = GameObject.Find("GameManager").GetComponent<GameController>();
                 gameController.hasIron = false;
                 nextDialog = ironDialog;
+                gameController.ironMetal = GameController.metals.iron;
                 break;
             case 1:
                 nextDialog = otherDialog;
+                gameController.ironMetal = GameController.metals.copper;
                 break;
             case 2:
                 nextDialog = otherDialog;
+                gameController.ironMetal = GameController.metals.mercury;
                 break;
             case 3:
                 nextDialog = nothingDialog;

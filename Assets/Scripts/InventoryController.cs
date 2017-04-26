@@ -15,7 +15,7 @@ public class InventoryController : MonoBehaviour
     [SerializeField]
     GameObject copperScribble;
     [SerializeField]
-    GameObject ironScrible;
+    GameObject ironScribble;
     [SerializeField]
     GameObject demonScribble;
 
@@ -60,12 +60,29 @@ public class InventoryController : MonoBehaviour
                     copperText.text = "THIS UGLY THING\nDOESNT LIKE IRON";
                     break;
                 case GameController.metals.mercury:
-                    copperText.text = "THIS UGLY THING\nDOESNT LIKE MERCURY";
+                    copperText.text = "THIS UGLY THING\nDOESNT LIKE\nQUICKSILVER";
                     break;
             }
         }
             
-        ironScrible.SetActive(gameController.metIronDemon);
+        ironScribble.SetActive(gameController.metIronDemon);
+        if (gameController.metIronDemon)
+        {
+            Text ironText = ironScribble.GetComponent<Text>();
+            switch (gameController.ironMetal)
+            {
+                case GameController.metals.copper:
+                    ironText.text = "THIS DEMON\nDOESNT LIKE COPPER";
+                    break;
+                case GameController.metals.iron:
+                    ironText.text = "THIS DEMON\nLIKES IRON";
+                    break;
+                case GameController.metals.mercury:
+                    ironText.text = "THIS DEMON\nDOESNT LIKE\nQUICKSILVER";
+                    break;
+            }
+        }
+
         demonScribble.SetActive(gameController.readDemonTablet);
     }
 }

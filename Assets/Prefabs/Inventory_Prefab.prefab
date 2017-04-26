@@ -461,7 +461,7 @@ MonoBehaviour:
   ironIcon: {fileID: 1397571594002648}
   mercuryIcon: {fileID: 1354523909826826}
   copperScribble: {fileID: 1051608986876642}
-  ironScrible: {fileID: 1448701486470202}
+  ironScribble: {fileID: 1448701486470202}
   demonScribble: {fileID: 1672384489097784}
 --- !u!114 &114755111800102136
 MonoBehaviour:
