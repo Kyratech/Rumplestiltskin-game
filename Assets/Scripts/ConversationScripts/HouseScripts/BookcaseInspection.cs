@@ -6,9 +6,18 @@ using System.Collections;
  */
 public class BookcaseInspection : ConversationTile
 {
+    [SerializeField]
+    GameObject dialogOption;
+
     public override void initText() { }
 
     public override void dialogStart() { }
 
-    public override void dialogFinish() { }
+    public override void dialogFinish()
+    {
+        GameController gameController = GameObject.Find("GameManager").GetComponent<GameController>();
+
+        if (!gameController.hasBook)
+            dialogBox = dialogOption;
+    }
 }

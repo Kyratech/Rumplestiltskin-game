@@ -1589,6 +1589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogBox: {fileID: 252030488}
+  dialogOption: {fileID: 1520773838}
 --- !u!1 &931967686
 GameObject:
   m_ObjectHideFlags: 0
