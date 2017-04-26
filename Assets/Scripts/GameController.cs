@@ -14,6 +14,9 @@ public class GameController : MonoBehaviour
     public bool hasCopper;
     public bool hasIron;
     public bool hasMercury;
+    public bool metCopperDemon;
+    public bool metIronDemon;
+    public bool readDemonTablet;
 
     //Game progress
     public bool completedDemonBridge;
@@ -35,7 +38,11 @@ public class GameController : MonoBehaviour
         //TODO: Eventually should not start with these
         hasCopper = true;
         hasIron = true;
-        hasMercury = true;        
+        hasMercury = true;
+
+        metCopperDemon = false;
+        metIronDemon = false;
+        readDemonTablet = false;       
 
         completedDemonBridge = false;
     }
