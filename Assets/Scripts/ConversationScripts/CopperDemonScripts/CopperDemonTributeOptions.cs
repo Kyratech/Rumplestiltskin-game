@@ -47,6 +47,9 @@ public class CopperDemonTributeOptions : DialogOptionController
     */
     public override void selectOption(int option, ConversationTile conversation)
     {
+        GameController gameController = GameObject.Find("GameManager").GetComponent<GameController>();
+        gameController.metCopperDemon = true;
+
         bool angered = false;
 
         switch (option)
@@ -54,16 +57,17 @@ public class CopperDemonTributeOptions : DialogOptionController
             case 0:
                 nextDialog = ironDialog;
                 angered = true;
+                gameController.copperMetal = GameController.metals.iron;
                 break;
             case 1:
-                //This is slow as heck! Only in use because this is a game jam sort of scenario.
-                GameController gameController = GameObject.Find("GameManager").GetComponent<GameController>();
                 gameController.hasCopper = false;
                 nextDialog = copperDialog;
+                gameController.copperMetal = GameController.metals.copper;
                 break;
             case 2:
                 nextDialog = mercuryDialog;
                 angered = true;
+                gameController.copperMetal = GameController.metals.mercury;
                 break;
             case 3:
                 nextDialog = defaultDialog;

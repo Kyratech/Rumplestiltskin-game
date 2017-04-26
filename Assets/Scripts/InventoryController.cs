@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class InventoryController : MonoBehaviour
@@ -45,7 +46,25 @@ public class InventoryController : MonoBehaviour
         copperIcon.SetActive(gameController.hasCopper);
         ironIcon.SetActive(gameController.hasIron);
         mercuryIcon.SetActive(gameController.hasMercury);
+
         copperScribble.SetActive(gameController.metCopperDemon);
+        if (gameController.metCopperDemon)
+        {
+            Text copperText = copperScribble.GetComponent<Text>();
+            switch (gameController.copperMetal)
+            {
+                case GameController.metals.copper:
+                    copperText.text = "THIS UGLY THING\nLIKES COPPER";
+                    break;
+                case GameController.metals.iron:
+                    copperText.text = "THIS UGLY THING\nDOESNT LIKE IRON";
+                    break;
+                case GameController.metals.mercury:
+                    copperText.text = "THIS UGLY THING\nDOESNT LIKE MERCURY";
+                    break;
+            }
+        }
+            
         ironScrible.SetActive(gameController.metIronDemon);
         demonScribble.SetActive(gameController.readDemonTablet);
     }

@@ -9,13 +9,22 @@ using System.Collections;
  */
 public class GameController : MonoBehaviour
 {
+    public enum metals
+    {
+        copper,
+        iron,
+        mercury
+    };
+
     //Inventory
     public bool hasBook;
     public bool hasCopper;
     public bool hasIron;
     public bool hasMercury;
     public bool metCopperDemon;
+    public metals copperMetal;
     public bool metIronDemon;
+    public metals ironMetal;
     public bool readDemonTablet;
 
     //Game progress
