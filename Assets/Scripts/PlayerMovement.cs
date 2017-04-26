@@ -140,6 +140,10 @@ public class PlayerMovement : MonoBehaviour {
                     {
                         other.GetComponent<DoorWarp>().ExitRoom();
                     }
+                    else if (other.tag.Equals("Locked Door"))
+                    {
+                        other.GetComponent<LockedDoorWarp>().ExitRoom();
+                    }
                     else
                     {
                         //Toggle interacting state

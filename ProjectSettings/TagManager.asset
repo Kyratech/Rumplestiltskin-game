@@ -8,6 +8,7 @@ TagManager:
   - DialogOption
   - DemonPlatform
   - DemonBeacon
+  - Locked Door
   layers:
   - Default
   - TransparentFX

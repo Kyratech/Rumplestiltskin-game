@@ -8,6 +8,10 @@ public class CupOptionDialog : DialogOptionController
     [SerializeField]
     private GameObject leftDialog;
 
+	enum Contents {Copper, Iron, Mercury, Key};
+	[SerializeField]
+	Contents contents;
+
     public override void extraSetup()
     {
         //Nothing
@@ -20,13 +24,28 @@ public class CupOptionDialog : DialogOptionController
     {
         switch (option)
         {
-            //"Take coins"
+            //"Take"
             case 0:
                 nextDialog = takenDialog;
                 GameController gameController = GameObject.Find("GameManager").GetComponent<GameController>();
-                gameController.hasCopper = true;
+				switch(contents) {
+					case Contents.Copper:
+					gameController.hasCopper = true;
+        			break;
+				case Contents.Iron:
+					gameController.hasIron = true;
+        			break;
+				case Contents.Mercury:
+					gameController.hasMercury = true;
+        			break;
+				case Contents.Key:
+					gameController.hasKey = true;
+					break;
+				default:
+					break;
+				}
                 break;
-            //"Leave coins"
+            //"Leave"
             case 1:
                 nextDialog = leftDialog;
                 break;

@@ -1,16 +1,39 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class CupLeave : MonoBehaviour {
+public class CupLeave : DialogTextController
+{
+	enum Contents {Copper, Iron, Mercury, Key};
+	[SerializeField]
+	Contents contents;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    // Use this for initialization
+    void Start()
+    {	
+    	string itemName;
+    	switch(contents) {
+		case Contents.Copper:
+    	 	itemName = "pile of copper coins";
+    	 	break;
+		case Contents.Iron:
+    	 	itemName = "shard of iron";
+    	 	break;
+		case Contents.Mercury:
+    	 	itemName = "bowl of quicksilver";
+    	 	break;
+    	 case Contents.Key:
+    	 	itemName = "switch";
+    	 	break;
+    	 default:
+    	 	itemName = "ERROR";
+    	 	break;
+    	}
+        List<string> lines = new List<string>();
+        lines.Add("You decide to leave the " + itemName + ".");
+
+        this.setLines(lines);
+    }
+
+    public override void extraSetup() { }
 }

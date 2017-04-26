@@ -6,14 +6,17 @@ using System.Collections;
  */
 public class CupInspection : ConversationTile
 {
-	enum Metal {Copper, Iron, Mercury, Empty};
+	enum Contents {Copper, Iron, Mercury, Key};
 	[SerializeField]
-	Metal contents;
+	Contents contents;
 	[SerializeField]
 	GameObject copperDialogOption;
+	[SerializeField]
 	GameObject ironDialogOption;
+	[SerializeField]
 	GameObject mercuryDialogOption;
-    GameObject emptyDialogOption;
+	[SerializeField]
+	GameObject keyDialogOption;
 
     public override void initText() { }
 
@@ -23,22 +26,25 @@ public class CupInspection : ConversationTile
     {
         GameController gameController = GameObject.Find("GameManager").GetComponent<GameController>();
 
-
         switch(contents) {
-        	case Metal.Copper:
+			case Contents.Copper:
 				if (!gameController.hasCopper)
             		dialogBox = copperDialogOption;
         		break;
-		case Metal.Iron:
+			case Contents.Iron:
 				if (!gameController.hasIron)
             		dialogBox = ironDialogOption;
         		break;
-		case Metal.Mercury:
+			case Contents.Mercury:
 				if (!gameController.hasMercury)
             		dialogBox = mercuryDialogOption;
         		break;
-        	default:
-        			dialogBox = emptyDialogOption;
+			case Contents.Key:
+				if(!gameController.hasKey)
+					dialogBox = keyDialogOption;
+				break;
+			default:
+        			dialogBox = null;
         		break;
         }
 

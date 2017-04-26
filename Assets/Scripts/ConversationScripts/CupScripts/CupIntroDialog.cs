@@ -4,32 +4,37 @@ using System.Collections.Generic;
 
 public class CupIntroDialog : DialogTextController
 {
-	enum Metal {Copper, Iron, Mercury, Empty};
+	enum Contents {Copper, Iron, Mercury, Key};
 	[SerializeField]
-	Metal contents;
+	Contents contents;
 
     // Use this for initialization
     void Start()
     {	
+    	string action = "Take";
     	string itemName;
     	switch(contents) {
-    	 case Metal.Copper:
-    	 	itemName = "copper coins";
+		case Contents.Copper:
+    	 	itemName = "pile of copper coins";
     	 	break;
-    	 case Metal.Iron:
-    	 	itemName = "iron shard";
+		case Contents.Iron:
+    	 	itemName = "shard of iron";
     	 	break;
-    	 case Metal.Mercury:
-    	 	itemName = "quicksilver";
+		case Contents.Mercury:
+    	 	itemName = "bowl of quicksilver";
     	 	break;
-    	 default:
-    	 	itemName = "it's empty";
+    	 case Contents.Key:
+    	 	action = "Flip";
+    	 	itemName = "switch";
+    	 	break;
+		default:
+    	 	itemName = "ERROR";
     	 	break;
     	}
         List<string> lines = new List<string>();
         lines.Add("What's this?");
-        lines.Add("Hmm... Looks like " + itemName);
-        lines.Add("(Take the " + itemName + "?)");
+        lines.Add("Hmm... Looks like a " + itemName);
+        lines.Add("(" + action + " the " + itemName + "?)");
 
         this.setLines(lines);
     }
