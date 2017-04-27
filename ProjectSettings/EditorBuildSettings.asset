@@ -18,6 +18,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Temple.unity
   - enabled: 1
+    path: Assets/Scenes/Portal_Cutscene.unity
+  - enabled: 1
     path: Assets/Scenes/Demon_Hub.unity
   - enabled: 1
     path: Assets/Scenes/Final_Area.unity

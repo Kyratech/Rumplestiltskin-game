@@ -2470,7 +2470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1184bf1bee7c688479c8f2f4a08dc93e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Demon_Hub
+  sceneToLoad: Portal_Cutscene
   warpID: 0
   lockedInspect: {fileID: 934283138}
   player: {fileID: 382948091}
@@ -4036,7 +4036,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1394158640697078, guid: 037487b8b3de9f34db5fd4fbf8da7223, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 037487b8b3de9f34db5fd4fbf8da7223, type: 2}
