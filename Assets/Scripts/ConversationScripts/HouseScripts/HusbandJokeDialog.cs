@@ -10,7 +10,7 @@ public class HusbandJokeDialog : DialogTextController
         List<string> lines = new List<string>();
         lines.Add("Ha. Ha. Ha.");
         lines.Add("Honey, it's a DEMON.");
-        lines.Add("I think we can both agree that these things aren't as nonsense as they once seemed.");
+        lines.Add("I think we can both agree that traditional science cannot explain THAT.");
 
         this.setLines(lines);
     }
