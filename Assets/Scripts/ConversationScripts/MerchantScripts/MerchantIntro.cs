@@ -9,7 +9,7 @@ public class MerchantIntro : DialogTextController
     {
         List<string> lines = new List<string>();
         lines.Add("Good Day Miss.");
-        lines.Add("Would you like to buy anything today?");
+        lines.Add("How Many I Help You?");
 
         this.setLines(lines);
     }

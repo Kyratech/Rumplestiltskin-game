@@ -224,12 +224,12 @@ Prefab:
     - target: {fileID: 114706094032066936, guid: 5d518cea150d7da4389a7330f61b28da,
         type: 2}
       propertyPath: m_Text
-      value: I'm just heading out to find the ancient temple in the forest.
+      value: I'm leaving town to find the name of a demon and confront them.
       objectReference: {fileID: 0}
     - target: {fileID: 114102860018633930, guid: 5d518cea150d7da4389a7330f61b28da,
         type: 2}
       propertyPath: m_Text
-      value: No thank you, bye.
+      value: I wish you could help me, goodbye.
       objectReference: {fileID: 0}
     - target: {fileID: 224859276322551204, guid: 5d518cea150d7da4389a7330f61b28da,
         type: 2}
