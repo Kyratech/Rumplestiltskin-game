@@ -662,6 +662,12 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 282942667}
+--- !u!114 &382948091 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114773374185836432, guid: 912009052ff9d144c8ec3c85d6c6751d,
+    type: 2}
+  m_PrefabInternal: {fileID: 631241820}
+  m_Script: {fileID: 11500000, guid: caa7fbad990781c4ba6776fb135385ed, type: 3}
 --- !u!1001 &408589669
 Prefab:
   m_ObjectHideFlags: 0
@@ -1307,11 +1313,6 @@ Prefab:
     - target: {fileID: 4189742249197486, guid: 5eba82ee6cf725744a6240b53a587501, type: 2}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 23973485096610912, guid: 5eba82ee6cf725744a6240b53a587501,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5eba82ee6cf725744a6240b53a587501, type: 2}
@@ -2019,6 +2020,7 @@ MonoBehaviour:
   sceneToLoad: Demon_Hub
   warpID: 0
   lockedInspect: {fileID: 934283138}
+  player: {fileID: 382948091}
 --- !u!1 &1151114991 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1738240434446532, guid: 5d518cea150d7da4389a7330f61b28da,
@@ -3637,6 +3639,11 @@ Prefab:
         type: 2}
       propertyPath: sceneToLoad
       value: Forest_Maze
+      objectReference: {fileID: 0}
+    - target: {fileID: 114726878384243966, guid: a6e46877661db2741a6f8b89ed5fd57a,
+        type: 2}
+      propertyPath: warpID
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a6e46877661db2741a6f8b89ed5fd57a, type: 2}

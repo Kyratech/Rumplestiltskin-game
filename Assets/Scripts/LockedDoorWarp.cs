@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class LockedDoorWarp : SceneWarp {
 
 	public InspectTile lockedInspect;
+	public PlayerMovement player;
 
 	public void ExitRoom() {
 		if (controller.hasKey) {
@@ -13,7 +14,7 @@ public class LockedDoorWarp : SceneWarp {
 			SceneManager.LoadScene(sceneToLoad);
 		}
 		else {
-			lockedInspect.toggleDialog();
+			player.setInteracting(lockedInspect.toggleDialog());
 		}
 	}
 
