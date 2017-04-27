@@ -35,6 +35,25 @@ public class IntroController : MonoBehaviour {
     public GameObject demonScript3;
     public GameObject demonScript4;
 
+    [SerializeField]
+    private GameObject bedroomBackground;
+    private Animator bedroomAnim;
+
+    [SerializeField]
+    private GameObject bedroomDemon;
+    private Animator bedroomDemonAnim;
+
+    public GameObject demonScript5;
+    public GameObject demonScript6;
+    public GameObject demonScript7;
+    public GameObject demonScript8;
+
+    public GameObject demonScriptFinal;
+
+    [SerializeField]
+    private GameObject finalFadeout;
+    private Image finalBlackoutImage;
+
     private List<string> introLines;
     private int lineCounter;
 
@@ -48,6 +67,14 @@ public class IntroController : MonoBehaviour {
         blackImage = mainBlackout.GetComponent<Image>();
         demonImage = demonIntro.GetComponent<Image>();
         dBlackoutImage = demonBlackout.GetComponent<Image>();
+        bedroomAnim = bedroomBackground.GetComponent<Animator>();
+        bedroomDemonAnim = bedroomDemon.GetComponent<Animator>();
+        finalBlackoutImage = finalFadeout.GetComponent<Image>();
+
+        bedroomBackground.SetActive(false);
+        bedroomAnim.speed = 0;
+        bedroomDemon.SetActive(false);
+        bedroomDemonAnim.speed = 0;
 
         introLines = new List<string>();
         introLines.Add("The year is 18XX.");
@@ -73,7 +100,7 @@ public class IntroController : MonoBehaviour {
 
         timer += Time.deltaTime;
 
-        if (state == 0 && lineCounter < introLines.Count - 1)
+        if (state == 0)
         {
             fadeText();
 
@@ -125,7 +152,76 @@ public class IntroController : MonoBehaviour {
             {
                 dBlackoutImage.color = new Color(dBlackoutImage.color.r, dBlackoutImage.color.r, dBlackoutImage.color.r, 1.0f);
                 timer = 0.0f;
+                lineCounter = 0;
+                introLines = new List<string>();
+                introLines.Add("Years later...");
+                introLines.Add("The demon comes to collect its prize.");
+                introLines.Add("The young family pleads for mercy...");
+                introLines.Add("");
+                mainText.text = introLines[0];
                 state = 2;
+                Debug.Log("Entering state 2");
+            }
+        }
+        else if(state == 2)
+        {
+            fadeText2();
+        }
+        else if(state == 3)
+        {
+            fadeOut(finalBlackoutImage, 0.0f);
+
+            if (timer < 2.0f)
+            { }
+            else if (timer > 2.0f && timer <= 5.0f)
+            {
+                demonScript5.SetActive(true);
+            }
+
+            else if (timer < 8.0f)
+            {
+                demonScript5.SetActive(false);
+                demonScript6.SetActive(true);
+            }
+
+            else if (timer < 11.0f)
+            {
+                demonScript6.SetActive(false);
+                demonScript7.SetActive(true);
+            }
+
+            else if (timer < 14.0)
+            {
+                demonScript7.SetActive(false);
+                demonScript8.SetActive(true);
+            }
+
+            else
+            {
+                demonScript8.SetActive(false);
+                state = 4;
+                timer = 0.0f;
+            }
+        }
+        else if (state == 4)
+        {
+            fadeIn(finalBlackoutImage);
+
+            if (timer < 2.0f)
+            { }
+            else if (timer < 5.0f)
+            {
+                demonScriptFinal.SetActive(true);
+            }
+
+            else if (timer < 6.0f)
+            {
+                demonScriptFinal.SetActive(false);
+            }
+
+            else
+            {
+                NextScene();
             }
         }
     }
@@ -133,12 +229,12 @@ public class IntroController : MonoBehaviour {
     private void fadeText()
     {
         if (timer > 1.0f && timer < 2.0f)
-            mainText.color = new Color(mainText.color.r, mainText.color.r, mainText.color.r, timer - 1.0f);
+            mainText.color = new Color(mainText.color.r, mainText.color.g, mainText.color.b, timer - 1.0f);
         else if (timer > 4.0f && timer <= 5.0f)
-            mainText.color = new Color(mainText.color.r, mainText.color.r, mainText.color.r, 5.0f - timer);
+            mainText.color = new Color(mainText.color.r, mainText.color.g, mainText.color.b, 5.0f - timer);
         else if(timer > 5.0f)
         {
-            mainText.color = new Color(mainText.color.r, mainText.color.r, mainText.color.r, 0.0f);
+            mainText.color = new Color(mainText.color.r, mainText.color.g, mainText.color.b, 0.0f);
             timer = 0.0f;
             mainText.text = introLines[++lineCounter];
 
@@ -154,6 +250,30 @@ public class IntroController : MonoBehaviour {
         }
     }
 
+    private void fadeText2()
+    {
+        if (timer > 1.0f && timer < 2.0f)
+            mainText.color = new Color(mainText.color.r, mainText.color.r, mainText.color.r, timer - 1.0f);
+        else if (timer > 3.0f && timer <= 4.0f)
+            mainText.color = new Color(mainText.color.r, mainText.color.r, mainText.color.r, 4.0f - timer);
+        else if (timer > 4.0f)
+        {
+            mainText.color = new Color(mainText.color.r, mainText.color.r, mainText.color.r, 0.0f);
+            timer = 0.0f;
+            mainText.text = introLines[++lineCounter];
+
+            if (lineCounter == introLines.Count - 1)
+            {
+                state = 3;
+                finalBlackoutImage.color = new Color(0, 0, 0, 1.0f);
+                bedroomBackground.SetActive(true);
+                bedroomAnim.speed = 1.0f;
+                bedroomDemon.SetActive(true);
+                bedroomDemonAnim.speed = 1.0f;
+            }
+        }
+    }
+
     private bool fadeIn(Image img)
     {
         img.color = new Color(img.color.r, img.color.r, img.color.r, timer);
@@ -161,6 +281,19 @@ public class IntroController : MonoBehaviour {
         if (timer > 1.0)
         {
             img.color = new Color(img.color.r, img.color.r, img.color.r, 1.0f);
+            return false;
+        }
+
+        return true;
+    }
+
+    private bool fadeOut(Image img, float startTime)
+    {
+        img.color = new Color(img.color.r, img.color.r, img.color.r, startTime + 1.0f - timer);
+
+        if (timer > startTime + 1.0)
+        {
+            img.color = new Color(img.color.r, img.color.r, img.color.r, 0.0f);
             return false;
         }
 
