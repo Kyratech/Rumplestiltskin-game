@@ -12,10 +12,8 @@ public class EldritchDemonNameResponse : DialogTextController
         lines.Add("Wield it, and one has power over the Demon.");
         lines.Add("Only one Demon is arrogant enough to challenge you in such a way.");
         lines.Add("They can be found to the north of this region.");  
-        lines.Add("You would not be the first mortal to attempt this quest.");
-        lines.Add("It is not my place to help you.");
-        lines.Add("But.");
-        lines.Add("Perhaps you can learn from mortals who have come before.");
+        lines.Add("The keeper of the bridge to the north.");
+        lines.Add("They can be found in the far west.");
 
         this.setLines(lines);
     }
