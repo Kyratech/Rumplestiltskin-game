@@ -3,6 +3,7 @@ using System.Collections;
 
 public class DemonHub_Controller : MonoBehaviour
 {
+
     //Deal with the beacon puzzle
     [SerializeField]
     private GameObject northBlocker;
@@ -18,6 +19,8 @@ public class DemonHub_Controller : MonoBehaviour
     private GameObject cameraObj;
     [SerializeField]
     private GameObject player;
+
+    private AudioSource audioSource;
 
     void Start()
     {
@@ -45,6 +48,8 @@ public class DemonHub_Controller : MonoBehaviour
 
             northBlocker.SetActive(false);
         }
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -92,6 +97,8 @@ public class DemonHub_Controller : MonoBehaviour
             beaconsCorrect = true;
 
             northBlocker.SetActive(false);
+
+            audioSource.Play();
 
             //Look at the centre platform
             cameraObj.GetComponent<CameraFollow>().setTarget(platforms[1].transform);

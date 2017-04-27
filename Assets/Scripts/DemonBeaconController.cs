@@ -14,16 +14,21 @@ public class DemonBeaconController : InspectTile
 
     private DemonHub_Controller hubController;
 
+    private AudioSource audioSource;
+
     void Start()
     {
         pauseTimer = 0.0f;
 
         GameObject controllerObj = GameObject.Find("DemonHub_Controller");
         hubController = controllerObj.GetComponent<DemonHub_Controller>();
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     public override bool toggleDialog()
     {
+    	audioSource.Play();
         activated = !activated;
         if (activated)
             transform.gameObject.GetComponent<SpriteRenderer>().sprite = lightSprite;
