@@ -17,11 +17,15 @@ public class GameController : MonoBehaviour
     };
 
     //Inventory
-    public bool hasBook;
+	public bool hasBook;
     public bool hasCopper;
     public bool hasIron;
     public bool hasMercury;
-    public bool hasKey;
+	public bool hasKey;
+    public bool hasCopperName;
+    public bool hasIronName;
+    public bool hasMercuryName;
+    public bool hasKeyName;
     public bool hasDirections;
     public bool metCopperDemon;
     public metals copperMetal;
@@ -46,12 +50,16 @@ public class GameController : MonoBehaviour
     {
         hasBook = false;
 
-        //TODO: Eventually should not start with these
         hasCopper = false;
         hasIron = false;
         hasMercury = false;
-
         hasKey = false;
+
+
+    	hasCopperName = false;
+    	hasIronName = false;
+    	hasMercuryName = false;
+    	hasKeyName = false;
        	
         metCopperDemon = false;
         metIronDemon = false;
