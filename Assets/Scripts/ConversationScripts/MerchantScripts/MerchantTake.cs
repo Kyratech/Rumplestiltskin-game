@@ -12,8 +12,6 @@ public class MerchantTake : DialogTextController
 		lines.Add("I remember the way, but unfortunately...");
 		lines.Add("I'm not very good at reversing directions, so i'll leave that to you.");
 		lines.Add("I believe it was:");
-        lines.Add("E-S-W-W-S-W");
-        lines.Add("Good luck on your journey");
 
         this.setLines(lines);
     }

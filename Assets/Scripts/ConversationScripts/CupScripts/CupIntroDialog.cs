@@ -38,7 +38,7 @@ public class CupIntroDialog : DialogTextController
     	 	break;
     	}
         List<string> lines = new List<string>();
-        lines.Add("What's this?");
+        //lines.Add("What's this?");
         lines.Add("An offering to " + demonName);
         lines.Add("Hmm... Looks like a " + itemName);
         lines.Add("(" + action + " the " + itemName + "?)");
