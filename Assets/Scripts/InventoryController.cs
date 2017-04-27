@@ -17,9 +17,17 @@ public class InventoryController : MonoBehaviour
     [SerializeField]
     GameObject copperScribble;
     [SerializeField]
-    GameObject ironScribble;
+	GameObject ironScribble;
     [SerializeField]
-    GameObject demonScribble;
+	GameObject demonScribble;
+    [SerializeField]
+	GameObject copperNameScribble;
+    [SerializeField]
+	GameObject ironNameScribble;
+    [SerializeField]
+	GameObject mercuryNameScribble;
+    [SerializeField]
+    GameObject keyNameScribble;
 
     public bool ToggleVisible()
     {
@@ -87,6 +95,11 @@ public class InventoryController : MonoBehaviour
 
         demonScribble.SetActive(gameController.readDemonTablet);
 
-        directionScribble.SetActive(gameController.hasDirections);
+		directionScribble.SetActive(gameController.hasDirections);
+
+		copperNameScribble.SetActive(gameController.hasCopperName);
+		ironNameScribble.SetActive(gameController.hasIronName);
+		mercuryNameScribble.SetActive(gameController.hasMercuryName);
+        keyNameScribble.SetActive(gameController.hasKeyName);
     }
 }

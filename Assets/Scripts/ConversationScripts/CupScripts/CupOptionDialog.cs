@@ -22,24 +22,28 @@ public class CupOptionDialog : DialogOptionController
     */
     public override void selectOption(int option, ConversationTile conversation)
     {
+		GameController gameController = GameObject.Find("GameManager").GetComponent<GameController>();
         switch (option)
         {
             //"Take"
             case 0:
                 nextDialog = takenDialog;
-                GameController gameController = GameObject.Find("GameManager").GetComponent<GameController>();
 				switch(contents) {
 					case Contents.Copper:
 					gameController.hasCopper = true;
+					gameController.hasCopperName = true;
         			break;
 				case Contents.Iron:
-					gameController.hasIron = true;
+				gameController.hasIron = true;
+					gameController.hasIronName = true;
         			break;
 				case Contents.Mercury:
-					gameController.hasMercury = true;
+				gameController.hasMercury = true;
+					gameController.hasMercuryName = true;
         			break;
 				case Contents.Key:
 					gameController.hasKey = true;
+					gameController.hasKeyName = true;
 					break;
 				default:
 					break;
@@ -47,7 +51,23 @@ public class CupOptionDialog : DialogOptionController
                 break;
             //"Leave"
             case 1:
-                nextDialog = leftDialog;
+			nextDialog = leftDialog;
+			switch(contents) {
+					case Contents.Copper:
+					gameController.hasCopperName = true;
+        			break;
+				case Contents.Iron:
+					gameController.hasIronName = true;
+        			break;
+				case Contents.Mercury:
+					gameController.hasMercuryName = true;
+        			break;
+				case Contents.Key:
+					gameController.hasKeyName = true;
+					break;
+				default:
+					break;
+				}
                 break;
         }
 
