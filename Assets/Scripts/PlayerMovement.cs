@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour {
 	void Update () {
 
         //Use esc to bring up the inventory screen
-        if (Input.GetButtonDown("Escape"))
+        if (Input.GetButtonDown("Escape") || Input.GetKeyDown(KeyCode.I))
         {
             InventoryController inv = inventoryScreen.GetComponent<InventoryController>();
             paused = inv.ToggleVisible();
