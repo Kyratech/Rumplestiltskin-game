@@ -320,6 +320,11 @@ Prefab:
       propertyPath: dialogBox
       value: 
       objectReference: {fileID: 1220073847}
+    - target: {fileID: 212830226828259130, guid: c25959032f747a745b4e90ee68c7ff36,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c25959032f747a745b4e90ee68c7ff36, type: 2}
   m_IsPrefabParent: 0
@@ -518,6 +523,11 @@ Prefab:
       propertyPath: dialogBox
       value: 
       objectReference: {fileID: 1148488623}
+    - target: {fileID: 212830226828259130, guid: c25959032f747a745b4e90ee68c7ff36,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c25959032f747a745b4e90ee68c7ff36, type: 2}
   m_IsPrefabParent: 0
@@ -786,6 +796,11 @@ Prefab:
       propertyPath: dialogBox
       value: 
       objectReference: {fileID: 1705339997}
+    - target: {fileID: 212830226828259130, guid: c25959032f747a745b4e90ee68c7ff36,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c25959032f747a745b4e90ee68c7ff36, type: 2}
   m_IsPrefabParent: 0
@@ -1466,6 +1481,11 @@ Prefab:
       propertyPath: m_Name
       value: Oven_Inspect
       objectReference: {fileID: 0}
+    - target: {fileID: 212830226828259130, guid: c25959032f747a745b4e90ee68c7ff36,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c25959032f747a745b4e90ee68c7ff36, type: 2}
   m_IsPrefabParent: 0
@@ -2056,6 +2076,11 @@ Prefab:
       propertyPath: dialogBox
       value: 
       objectReference: {fileID: 1730980482}
+    - target: {fileID: 212830226828259130, guid: c25959032f747a745b4e90ee68c7ff36,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c25959032f747a745b4e90ee68c7ff36, type: 2}
   m_IsPrefabParent: 0
@@ -2110,6 +2135,11 @@ Prefab:
         type: 2}
       propertyPath: dialogBox
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 212830226828259130, guid: c25959032f747a745b4e90ee68c7ff36,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114818204709015366, guid: c25959032f747a745b4e90ee68c7ff36, type: 2}
@@ -2356,7 +2386,7 @@ Prefab:
     - target: {fileID: 212830226828259130, guid: c25959032f747a745b4e90ee68c7ff36,
         type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c25959032f747a745b4e90ee68c7ff36, type: 2}
@@ -2495,6 +2525,11 @@ Prefab:
       propertyPath: dialogBox
       value: 
       objectReference: {fileID: 605870286}
+    - target: {fileID: 212830226828259130, guid: c25959032f747a745b4e90ee68c7ff36,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c25959032f747a745b4e90ee68c7ff36, type: 2}
   m_IsPrefabParent: 0
@@ -3461,6 +3496,11 @@ Prefab:
       propertyPath: dialogBox
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 212830226828259130, guid: c25959032f747a745b4e90ee68c7ff36,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114818204709015366, guid: c25959032f747a745b4e90ee68c7ff36, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: c25959032f747a745b4e90ee68c7ff36, type: 2}
@@ -3641,6 +3681,11 @@ Prefab:
         type: 2}
       propertyPath: sceneToLoad
       value: Street
+      objectReference: {fileID: 0}
+    - target: {fileID: 212799385331798986, guid: a6e46877661db2741a6f8b89ed5fd57a,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a6e46877661db2741a6f8b89ed5fd57a, type: 2}
@@ -4566,6 +4611,11 @@ Prefab:
       propertyPath: dialogBox
       value: 
       objectReference: {fileID: 690271313}
+    - target: {fileID: 212830226828259130, guid: c25959032f747a745b4e90ee68c7ff36,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c25959032f747a745b4e90ee68c7ff36, type: 2}
   m_IsPrefabParent: 0
