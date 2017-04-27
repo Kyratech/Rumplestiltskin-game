@@ -6,10 +6,15 @@ using System.Collections;
  */
 public class MerchantConversation : ConversationTile
 {
+	[SerializeField]
+    GameObject dialogOption;
 
     public override void initText() { }
 
     public override void dialogStart() { }
 
-    public override void dialogFinish() { }
+    public override void dialogFinish()
+    {
+        dialogBox = dialogOption;
+    }
 }
