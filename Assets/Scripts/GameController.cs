@@ -7,8 +7,13 @@ using System.Collections;
  * and narrative engine progress
  * Eg: Which characters spoken to + which dialog option, etc.
  */
+using UnityEngine.SceneManagement;
+
+
 public class GameController : MonoBehaviour
 {
+	public string sceneToDestroy;
+
     public enum metals
     {
         copper,
@@ -66,5 +71,10 @@ public class GameController : MonoBehaviour
         readDemonTablet = false;       
 
         completedDemonBridge = false;
+    }
+
+    void Update() {
+		if (SceneManager.GetActiveScene().name == sceneToDestroy)
+			Destroy(gameObject);
     }
 }
