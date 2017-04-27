@@ -162,6 +162,11 @@ Prefab:
       propertyPath: dialogBox
       value: 
       objectReference: {fileID: 2039147196}
+    - target: {fileID: 212830226828259130, guid: c25959032f747a745b4e90ee68c7ff36,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c25959032f747a745b4e90ee68c7ff36, type: 2}
   m_IsPrefabParent: 0
@@ -649,6 +654,11 @@ Prefab:
       propertyPath: dialogBox
       value: 
       objectReference: {fileID: 1989098177}
+    - target: {fileID: 212830226828259130, guid: c25959032f747a745b4e90ee68c7ff36,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c25959032f747a745b4e90ee68c7ff36, type: 2}
   m_IsPrefabParent: 0
@@ -999,6 +1009,11 @@ Prefab:
     - target: {fileID: 1095845908761792, guid: fc93df2d14d566c4b86696f933d73188, type: 2}
       propertyPath: m_Name
       value: Temple_Warp
+      objectReference: {fileID: 0}
+    - target: {fileID: 212329098639872532, guid: fc93df2d14d566c4b86696f933d73188,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc93df2d14d566c4b86696f933d73188, type: 2}
@@ -2841,6 +2856,11 @@ Prefab:
         type: 2}
       propertyPath: warpID
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212329098639872532, guid: fc93df2d14d566c4b86696f933d73188,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc93df2d14d566c4b86696f933d73188, type: 2}
