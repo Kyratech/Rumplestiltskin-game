@@ -74,7 +74,7 @@ public class GameController : MonoBehaviour
     }
 
     void Update() {
-		if (SceneManager.GetActiveScene().name == sceneToDestroy)
+		if (SceneManager.GetActiveScene().name == sceneToDestroy || SceneManager.GetActiveScene().name == "Game_Over")
 			Destroy(gameObject);
     }
 }

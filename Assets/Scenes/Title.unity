@@ -205,6 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 607b696ee25acaa43a7954065d8b80fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneToLoad: Opening_Cutscene
 --- !u!4 &356630201
 Transform:
   m_ObjectHideFlags: 0

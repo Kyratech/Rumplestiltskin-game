@@ -22,7 +22,7 @@ public class BackgroundMusic : MonoBehaviour {
 		} 
 	}
 	void Update () {
-		if (SceneManager.GetActiveScene().name == sceneToDestroy)
+		if (SceneManager.GetActiveScene().name == sceneToDestroy || SceneManager.GetActiveScene().name == "Game_Over")
 			Destroy(gameObject);
     	for(int i = 1; i<scenesToChange.Length+1; i++) {
 			if(audioPlaying != i && SceneManager.GetActiveScene().name == scenesToChange[i-1] && audioClips[i-1]) {

@@ -5864,6 +5864,7 @@ MonoBehaviour:
   demonSmug: {fileID: 21300000, guid: 91701346c5083854cace2fd84be2fcad, type: 3}
   demon: {fileID: 1304376500}
   readyOptions: {fileID: 1753167962}
+  finalDemonBadEndDialogThree: {fileID: 935372225}
 --- !u!1001 &1745007687
 Prefab:
   m_ObjectHideFlags: 0
