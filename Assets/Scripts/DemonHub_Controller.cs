@@ -80,33 +80,36 @@ public class DemonHub_Controller : MonoBehaviour
 
     public void updateBeacons()
     {
-        bool allCorrect = true;
-        foreach(GameObject beacon in beacons)
+        //If the puzzle was previously solved, then it cannot be unsolved
+        GameController gameController = GameObject.Find("GameManager").GetComponent<GameController>();
+        if (!gameController.completedDemonBridge)
         {
-            DemonBeaconController beaconController = beacon.GetComponent<DemonBeaconController>();
-            if(!beaconController.getCorrect())
+            bool allCorrect = true;
+            foreach (GameObject beacon in beacons)
             {
-                allCorrect = false;
-                break;
+                DemonBeaconController beaconController = beacon.GetComponent<DemonBeaconController>();
+                if (!beaconController.getCorrect())
+                {
+                    allCorrect = false;
+                    break;
+                }
             }
-        }
 
-        if(allCorrect)
-        {
-            Debug.Log("All correct");
-            beaconsCorrect = true;
+            if (allCorrect && gameController)
+            {
+                Debug.Log("All correct");
+                beaconsCorrect = true;
 
-            northBlocker.SetActive(false);
+                northBlocker.SetActive(false);
 
-            audioSource.Play();
+                audioSource.Play();
 
-            //Look at the centre platform
-            cameraObj.GetComponent<CameraFollow>().setTarget(platforms[1].transform);
-            player.GetComponent<PlayerMovement>().setInteracting(true);
+                //Look at the centre platform
+                cameraObj.GetComponent<CameraFollow>().setTarget(platforms[1].transform);
+                player.GetComponent<PlayerMovement>().setInteracting(true);
 
-            //This is slow as heck! Only in use because this is a game jam sort of scenario.
-            GameController gameController = GameObject.Find("GameManager").GetComponent<GameController>();
-            gameController.completedDemonBridge = true;
+                gameController.completedDemonBridge = true;
+            }
         }
     }
 }
