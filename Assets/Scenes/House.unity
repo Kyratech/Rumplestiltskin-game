@@ -1226,7 +1226,7 @@ Prefab:
     - target: {fileID: 114706094032066936, guid: 5d518cea150d7da4389a7330f61b28da,
         type: 2}
       propertyPath: m_Text
-      value: I love you
+      value: Please...forgive me
       objectReference: {fileID: 0}
     - target: {fileID: 114102860018633930, guid: 5d518cea150d7da4389a7330f61b28da,
         type: 2}
