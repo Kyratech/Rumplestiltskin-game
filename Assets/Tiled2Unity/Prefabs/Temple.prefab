@@ -80,7 +80,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1159664650480776
 GameObject:
   m_ObjectHideFlags: 0
@@ -1658,8 +1658,8 @@ PolygonCollider2D:
     - - {x: 8, y: -8}
       - {x: 8, y: -3}
       - {x: 9, y: -3}
-      - {x: 9, y: -2}
-      - {x: 11, y: -2}
+      - {x: 9.376152, y: -3.0001462}
+      - {x: 10.897002, y: -2.9999616}
       - {x: 11, y: -3}
       - {x: 12, y: -3}
       - {x: 12, y: -8}
