@@ -11,6 +11,9 @@ public class FinalDemonConversation : ConversationTile
     [SerializeField]
     private GameObject demon;
 
+    [SerializeField]
+    private GameObject readyOptions;
+
     public override void initText()
     {
         
@@ -24,5 +27,6 @@ public class FinalDemonConversation : ConversationTile
     public override void dialogFinish()
     {
         demon.GetComponent<SpriteRenderer>().sprite = demonIdle;
+        dialogBox = readyOptions;
     }
 }

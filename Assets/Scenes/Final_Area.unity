@@ -5126,6 +5126,7 @@ MonoBehaviour:
   demonIdle: {fileID: 21300000, guid: fd16d8a49d323c04e948b0d51b13f014, type: 3}
   demonSmug: {fileID: 21300000, guid: 91701346c5083854cace2fd84be2fcad, type: 3}
   demon: {fileID: 1304376500}
+  readyOptions: {fileID: 1753167962}
 --- !u!1001 &1745007687
 Prefab:
   m_ObjectHideFlags: 0
