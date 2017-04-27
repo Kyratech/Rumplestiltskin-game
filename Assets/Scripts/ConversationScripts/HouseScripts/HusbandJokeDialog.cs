@@ -2,14 +2,15 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class BookLeaveDialog : DialogTextController
+public class HusbandJokeDialog : DialogTextController
 {
     // Use this for initialization
     void Start()
     {
         List<string> lines = new List<string>();
-        lines.Add("(Decided to leave the book where it is)");
-        lines.Add("Utter nonsense. I can get by with REAL science, thank you very much.");
+        lines.Add("Ha. Ha. Ha.");
+        lines.Add("Honey, it's a DEMON.");
+        lines.Add("I think we can both agree that these things aren't as nonsense as they once seemed.");
 
         this.setLines(lines);
     }
