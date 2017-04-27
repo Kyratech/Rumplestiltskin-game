@@ -13,9 +13,7 @@ public class FinalDemonIntro2Dialog : DialogTextController
     {
         List<string> lines = new List<string>();
         lines.Add("Because.");
-        lines.Add("I am thinking.");
-        lines.Add("That once this is finished.");
-        lines.Add("It will be I that has the last laugh.");
+        lines.Add("I most certainly did.");
         lines.Add("So.");
         lines.Add("Are we ready?");
 

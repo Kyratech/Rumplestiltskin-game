@@ -35,6 +35,8 @@ public class FinalChoiceOptions : DialogOptionController
     [SerializeField]
     private GameObject leadOption;
 
+    bool certain = false;
+
     public override void extraSetup()
     {
         //This is slow as heck! Only in use because this is a game jam sort of scenario.
@@ -86,6 +88,8 @@ public class FinalChoiceOptions : DialogOptionController
             {
                 copperOption.SetActive(false);
                 beelzebubOption.SetActive(false);
+
+                certain = true;
             }
         }
 
@@ -115,7 +119,10 @@ public class FinalChoiceOptions : DialogOptionController
                 nextDialog = incorrectDialog;
                 break;
             case 1:
-                nextDialog = correctCertainDialog;
+                if (certain)
+                    nextDialog = correctCertainDialog;
+                else
+                    nextDialog = correctGuessDialog;
                 break;
         }
 
