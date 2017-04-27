@@ -22,7 +22,9 @@ public class MerchantOption : DialogOptionController
         {
             //"Take book"
             case 0:
-                nextDialog = takenDialog;
+				nextDialog = takenDialog;
+				GameController gameController = GameObject.Find("GameManager").GetComponent<GameController>();
+                gameController.hasDirections = true;
                 break;
             //"Leave book"
             case 1:

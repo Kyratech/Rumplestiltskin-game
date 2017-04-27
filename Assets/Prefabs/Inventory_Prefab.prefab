@@ -61,7 +61,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1260345219046510
 GameObject:
   m_ObjectHideFlags: 1
@@ -477,6 +477,7 @@ MonoBehaviour:
   copperIcon: {fileID: 1935618929934704}
   ironIcon: {fileID: 1397571594002648}
   mercuryIcon: {fileID: 1354523909826826}
+  directionScribble: {fileID: 1240055501166166}
   copperScribble: {fileID: 1051608986876642}
   ironScribble: {fileID: 1448701486470202}
   demonScribble: {fileID: 1672384489097784}

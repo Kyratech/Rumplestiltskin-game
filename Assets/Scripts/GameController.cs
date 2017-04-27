@@ -22,6 +22,7 @@ public class GameController : MonoBehaviour
     public bool hasIron;
     public bool hasMercury;
     public bool hasKey;
+    public bool hasDirections;
     public bool metCopperDemon;
     public metals copperMetal;
     public bool metIronDemon;

@@ -11,7 +11,9 @@ public class InventoryController : MonoBehaviour
     [SerializeField]
     GameObject ironIcon;
     [SerializeField]
-    GameObject mercuryIcon;
+	GameObject mercuryIcon;
+    [SerializeField]
+    GameObject directionScribble;
     [SerializeField]
     GameObject copperScribble;
     [SerializeField]
@@ -84,5 +86,7 @@ public class InventoryController : MonoBehaviour
         }
 
         demonScribble.SetActive(gameController.readDemonTablet);
+
+        directionScribble.SetActive(gameController.hasDirections);
     }
 }
