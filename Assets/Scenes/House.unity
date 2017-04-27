@@ -1357,6 +1357,11 @@ Prefab:
       propertyPath: m_TagString
       value: GameController
       objectReference: {fileID: 0}
+    - target: {fileID: 114422313288184840, guid: 037487b8b3de9f34db5fd4fbf8da7223,
+        type: 2}
+      propertyPath: sceneToDestroy
+      value: End_Scene
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 037487b8b3de9f34db5fd4fbf8da7223, type: 2}
   m_IsPrefabParent: 0

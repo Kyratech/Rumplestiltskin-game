@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class TitleController : MonoBehaviour {
 
+	public string sceneToLoad;
+
 	public void onClickPlay() {
-		SceneManager.LoadScene("Opening_Cutscene");
+		SceneManager.LoadScene(sceneToLoad);
 	}
 }

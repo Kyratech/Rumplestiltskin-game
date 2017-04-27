@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class FinalDemonConversation : ConversationTile
 {
+
     [SerializeField]
     private Sprite demonIdle;
     [SerializeField]
@@ -13,6 +15,8 @@ public class FinalDemonConversation : ConversationTile
 
     [SerializeField]
     private GameObject readyOptions;
+
+	public GameObject finalDemonBadEndDialogThree;
 
     public override void initText()
     {
@@ -26,6 +30,10 @@ public class FinalDemonConversation : ConversationTile
 
     public override void dialogFinish()
     {
+    	if(dialogBox == finalDemonBadEndDialogThree) {
+    		SceneManager.LoadScene("Game_Over");
+    	}
+
         demon.GetComponent<SpriteRenderer>().sprite = demonIdle;
         dialogBox = readyOptions;
     }

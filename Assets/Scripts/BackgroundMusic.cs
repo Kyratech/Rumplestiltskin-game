@@ -8,6 +8,7 @@ public class BackgroundMusic : MonoBehaviour {
 	AudioSource audioSource;
 	public AudioClip[] audioClips;
 	public string[] scenesToChange;
+	public string sceneToDestroy;
 	public int audioPlaying = 0;
 
 	static bool AudioBegin = false; 
@@ -21,6 +22,8 @@ public class BackgroundMusic : MonoBehaviour {
 		} 
 	}
 	void Update () {
+		if (SceneManager.GetActiveScene().name == sceneToDestroy || SceneManager.GetActiveScene().name == "Game_Over")
+			Destroy(gameObject);
     	for(int i = 1; i<scenesToChange.Length+1; i++) {
 			if(audioPlaying != i && SceneManager.GetActiveScene().name == scenesToChange[i-1] && audioClips[i-1]) {
 				audioSource.Stop();

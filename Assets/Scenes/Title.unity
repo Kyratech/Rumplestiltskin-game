@@ -205,6 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 607b696ee25acaa43a7954065d8b80fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneToLoad: Opening_Cutscene
 --- !u!4 &356630201
 Transform:
   m_ObjectHideFlags: 0
@@ -575,6 +576,11 @@ Prefab:
     - target: {fileID: 4969616342298838, guid: 5961e779afec0b6498b482d69c9c2de2, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114334593677148532, guid: 5961e779afec0b6498b482d69c9c2de2,
+        type: 2}
+      propertyPath: sceneToDestroy
+      value: End_Scene
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5961e779afec0b6498b482d69c9c2de2, type: 2}
