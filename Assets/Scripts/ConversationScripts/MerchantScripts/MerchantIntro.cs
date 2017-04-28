@@ -8,8 +8,8 @@ public class MerchantIntro : DialogTextController
     void Start()
     {
         List<string> lines = new List<string>();
-        lines.Add("Good Day Miss.");
-        lines.Add("How Many I Help You?");
+        lines.Add("Good day, Miss.");
+        lines.Add("How may I help you?");
 
         this.setLines(lines);
     }
