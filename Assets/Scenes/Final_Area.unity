@@ -5865,6 +5865,8 @@ MonoBehaviour:
   demon: {fileID: 1304376500}
   readyOptions: {fileID: 1753167962}
   finalDemonBadEndDialogThree: {fileID: 935372225}
+  finalDemonGoodEndDialogTree: {fileID: 1500664017}
+  finalDemonBestEndDialogTree: {fileID: 786156578}
 --- !u!1001 &1745007687
 Prefab:
   m_ObjectHideFlags: 0

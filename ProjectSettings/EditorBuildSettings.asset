@@ -24,4 +24,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Final_Area.unity
   - enabled: 1
+    path: Assets/Scenes/Good_End_Cutscene.unity
+  - enabled: 1
     path: Assets/Scenes/Game_Over.unity

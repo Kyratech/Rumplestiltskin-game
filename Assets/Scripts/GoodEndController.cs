@@ -122,6 +122,6 @@ public class GoodEndController : MonoBehaviour
 
     private void NextScene()
     {
-        SceneManager.LoadScene("Title");
+        SceneManager.LoadScene("Game_Over");
     }
 }
